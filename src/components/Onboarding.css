@@ -1,0 +1,142 @@
+.main-container{    
+    width: 100%; /*1440*/
+    height: 100%; /*1024*/
+    top: 170px;    
+    left: 170px;          
+    border-radius: 20px;
+    background-color:#443D3C;    
+    opacity: 0px;
+}
+
+
+.center-grid{
+    text-align: center;
+    justify-content: center;
+    display:grid;
+}
+
+.main-frame{   
+    width: 966px; 
+    height: 595.67px; /**/
+    top: 141px; /**/
+    left: 187px;     /**/
+    padding: 10px;
+    gap: 24px;
+    opacity: 0px;
+    margin: auto;
+    justify-items: center;
+    text-align: center;
+    display: grid;
+    border: 1px solid red; /*to remove*/
+}
+
+.main-text{
+    width: 703px; /*no*/
+    height: 81px; /*no*/        
+    font-family:"poppins";
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 81px;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF; /*to remove*/
+}
+
+.line-frame{
+    width: 80px;
+    height: 16.67px;
+    padding: 5px;
+    gap: 0px;    
+    opacity: 0px;    
+}
+
+.grid-frame{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 549px;
+    height: 380px;
+    border-radius: 10px;
+    padding: 32px;
+    gap: 16px;    
+    opacity: 0px;
+    border: 1px solid blue;
+    margin: auto;
+    justify-content: center;
+}
+
+.card{
+    display: grid;
+    justify-items: center;    
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;    
+    padding: 15px 17px 15px 17px;
+    gap: 10px;    
+    opacity: 0px;
+    background: #FFF0F1;
+    box-shadow: 4px 7px 18px 7px #0000000D;
+}
+
+
+.card-icon-frame{    
+    width: 100px;
+    height: 100px;    
+    padding: 10px;
+    gap: 10px;
+    opacity: 0px;
+
+}
+
+.card-icon{    
+    width: 80px;
+    height: 80px;
+    gap: 0px;
+    border: 0.5px 0px 0px 0px;
+    opacity: 0px;
+}
+
+.card-text-frame{
+    width: 84px;
+    height: 21px;
+    justify-content: center;
+    padding: 0px 5px 0px 5px;
+    gap: 10px;
+    opacity: 0px;
+    background: #FF445F;    
+}
+
+.card-text{
+    height: 21px;
+    gap: 0px;
+    opacity: 0px;
+    width: 74px;
+    font-family: "Poppins";
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    text-align: center;
+}
+
+.bottom-frame{    
+    width: 100%;
+    height: 36px /*61*/;
+    top: 963px;
+    gap: 10px;
+    opacity: 0px;
+    background: #000000;
+    text-align: center;
+    /*padding: 71px 685px 71px 685px;*/ /*21px;*/ 
+    border-radius: 0px 0px 20px 20px;       
+}
+
+.bottom-text{
+    font-family: 'Aller';
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 24.14px;    
+    color: #FFFFFF;
+}
+
+.bottom-red-text{
+    color: #FF445F;
+}
