@@ -1,4 +1,3 @@
-import React from 'react';
 import './Onboarding.css';
 function Onboarding(props){
     const domaines=[
