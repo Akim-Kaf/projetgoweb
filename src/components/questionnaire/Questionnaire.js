@@ -40,9 +40,9 @@ function Questionnaire(props){
                 </div>                                            
                 <div className='notification-frame'>
                 <ul>
-                    <li>Plus de 1500 professionnels qualifiés, recrutés selon des critères et un processus stricts</li>
-                    <li>Fourchette tarifaire connue à l’avance, incluant le déplacement ainsi qu’un devis gratuit</li>
-                    <li>Intervention 7j/7 24h/24 pour les dépannages d’urgence</li>
+                    <li><span className='notification-text'>Plus de <b>1500 professionnels qualifiés,</b> recrutés selon des critères et un processus stricts</span></li>
+                    <li><span className='notification-text'>Fourchette tarifaire <b>connue à l’avance,</b> incluant le déplacement ainsi qu’un devis gratuit</span></li>
+                    <li><span className='notification-text'>Intervention <b>7j/7 24h/24</b> pour les dépannages d’urgence</span></li>
                 </ul>
                 
                 </div>
