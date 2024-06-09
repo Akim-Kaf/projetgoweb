@@ -1,0 +1,339 @@
+.main-container{
+    position:absolute;    
+    /*z-index: auto;*/
+    width: 100%;
+    height: 100%;
+    gap: 48px;
+    opacity: 0px;
+    /*top: 170px;    */
+    /*left: 170px;          */
+    border-radius: 20px;
+    background: #F8F8F8;   
+    opacity: 0px;    
+
+}
+
+.nav-bar{
+    display: flex;
+    width: 100%;
+    height: 5.352%;
+    gap: 0px;
+    justify-content: space-between;
+    opacity: 0px;
+    background: #FFFFFF;
+}
+
+.logo-frame{
+    width: 9.151%;
+    height: 100%;    
+    /*gap: 8px;*/
+    opacity: 0px;
+    background: #443D3C;      
+    display: flex;    
+}
+
+.logo{
+    width: 55.2%;
+    height: 68.573%;    
+    gap: 0px;
+    opacity: 0px;
+    margin: auto;        
+}
+
+
+.contact-frame{
+    width: 9.151%;
+    height: 100%;
+    display: flex;    
+    gap: 0px;
+    opacity: 0px;
+    border-radius: 0px 10px 0px 0px;
+    background: #FF445F;
+}
+
+.contact-text{
+    width: 100%;
+    height: 100%;
+    gap: 0px;
+    opacity: 0px;    
+    font-family: 'Catamaran';
+    font-size: 100%;
+    font-weight: 800;
+    text-align: center;
+    line-height: 29.52px;
+    margin: auto;
+    color: #FFFFFF;
+    border: 1px solid black; /*to remove*/    
+
+}
+
+
+.main-frame{
+    display: flex;
+    width: 77.16%;
+    height: 87.461%;
+    padding: 5px;
+    opacity: 0px;       
+    margin: auto;
+    /*justify-items: center;*/
+    /*text-align: center;*/     
+    border: 1px solid red; /*to remove*/
+}
+
+.main-text{
+    /*width: 420px; */
+    width: 100%;
+    height: 43%; /*no*/
+    padding: 5px;        
+    font-family:"poppins";
+    font-weight: 700;
+    font-size: 34px;
+    text-align: center;
+    line-height: 25px;
+    color: #000000;
+    border: 1px solid black; /*to remove*/    
+}
+
+.line-frame{
+    width: 7.5%;
+    height: 36%;        
+    /*margin-top: -8%;*/
+    transform: translateY(-80%);
+    border: 1px solid black; /*to remove*/            
+    padding: 5px;
+}
+
+.content-frame{    
+    width: 60%;
+    height: 90%;
+    margin: auto;
+    /*margin: auto;*/
+    /*transform: translateY(-10%);    */
+    /*margin-top: -105px;*/
+    padding: 10px;
+    /*margin-bottom: 200px;*/
+    /*gap: 10px;*/
+    border-radius: 10px 0px 0px 0px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    background: #FFFFFF;
+    border: 1px solid #F2F2F2;
+    box-shadow: 4px 7px 18px 7px #0000000D;
+}
+
+
+.grid-frame{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    width: 98%;
+    height: 42%;/*283px*/
+    /*padding: 10px;*/
+    gap: 16px;
+    opacity: 0px;    
+    border: 1px solid blue;        
+    margin: auto;
+    justify-content: center;
+}
+
+.rigth-content-frame{    
+    width: 30%;
+    height: 90%;
+    margin: auto;
+    justify-content: center;
+    /*transform: translateY(-10%);    */
+    /*margin-top: -105px;*/
+    padding: 10px;
+    /*margin-bottom: 200px;*/
+    /*gap: 10px;*/    
+    border: 1px 0px 0px 0px;
+    opacity: 0px;    
+    border: 1px solid green;    
+}
+
+.rigth-item-frame{    
+    width: 80%;
+    height: 55%;
+    margin: auto;
+    /*transform: translateY(-10%);    */
+    /*margin-top: -105px;*/
+    padding: 10px;
+    /*margin-bottom: 200px;*/
+    /*gap: 10px;*/    
+    border: 1px 0px 0px 0px;
+    opacity: 0px;    
+    border: 1px solid yellow;    
+}
+
+.rigth-bottom-item-frame{    
+    width: 80%;
+    height: 30%;
+    margin: auto;
+    margin-top: 10%;
+    /*transform: translateY(-10%);    */
+    /*margin-top: -105px;*/
+    padding: 10px;
+    /*margin-bottom: 200px;*/
+    /*gap: 10px;*/    
+    border: 1px 0px 0px 0px;
+    opacity: 0px;    
+    border: 1px solid darkblue;    
+}
+
+
+.card{
+    display: flex;       
+    width: 100%;/*423px;*/
+    height: 40%;
+    /*padding: 5px;*/
+    gap: 0px;
+    border-radius: 10px;
+    justify-content: space-between;
+    opacity: 0px;
+    background: #F2F2F2;
+}
+
+
+.card-text-frame{    
+    justify-content: center;
+    display:flex;
+    width: 100%;    
+    gap: 0px;
+    opacity: 0px;    
+    margin: auto;
+    text-align: left;
+    border: 1px solid #000000;
+}
+
+.card-text{    
+    width: 100%;
+    height: 14px;
+    top: 12px;
+    gap: 0px;
+    opacity: 0px;        
+    font-family: "Poppins";
+    font-size: 80%;
+    font-weight: 600;    
+    margin: auto;
+}
+
+
+.card-icon-frame{    
+    width: 24px;
+    height: 24px;
+    gap: 0px;
+    opacity: 0px;
+    margin: auto;
+}
+
+
+.card-icon{        
+    width: 20px;
+    height: 20px;
+    top: 2px;
+    left: 2px;
+    gap: 0px;
+    opacity: 0px;
+}
+
+.back-button-frame{
+    position: relative;
+    margin-top: 2%;    
+    left: 1%;
+    width: 127px;
+    height: 37px;
+    gap: 10px;
+    opacity: 0px;    
+    border: 1px solid black;    
+}
+
+.back-button{
+    width: 127px;
+    height: 100%;
+    margin: auto;
+    /*padding: 16px;*/
+    /*gap: 8px;*/
+    border-radius: 43px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    display: flex;
+    border: 1px solid #FF445F;
+
+}
+
+.back-button-text{
+    width: 127px;
+    height: 21px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    text-align: center;
+    color: #FF445F;
+    margin: auto;
+    border: 1px solid #FF445F;
+
+}
+
+.notification-frame{
+    width: 98%;
+    height: 42%;
+    margin: auto;
+    transform: translateY(10%);
+    gap: 0px;
+    border-radius: 10px;    
+    opacity: 0px;
+    /*margin-top: 45px;*/
+    /*margin-bottom: 34px;    */
+    justify-content: center;
+    display: grid;
+    background: #DEFAE9;
+}
+
+
+
+ul{
+    list-style-image:
+    url("../../../public/ok.png");
+    border: 1px solid #FF445F;
+    justify-content: center;
+    display: grid;
+}
+
+
+
+.notification-text{
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+}
+
+
+.bottom-frame{    
+    width: 100%;
+    height: 35px;
+    /*top: 963px;*/
+    gap: 10px;
+    opacity: 0px;
+    background: #000000;
+    text-align: center;
+    /*padding: 71px 685px 71px 685px;*/ /*21px;*/ 
+    border-radius: 0px 0px 10px 10px;       
+}
+
+.bottom-text{
+    font-family: 'Aller';
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 24.14px;    
+    color: #FFFFFF;
+}
+
+.red-text{
+    color: #FF445F;
+}
+
