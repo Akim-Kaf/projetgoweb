@@ -4,7 +4,7 @@ function Questionnaire(props){
         id:1,question:'Où se situe votre problème ?',
             responses:['WC','Lavabo/évier','Douche/baignoire',
                 "colonne générale d'immeuble","Tuyauterie/canalisation",
-                "Tuyauterie/canalisation","Tuyau machine a laver/lave-vaisselle",
+                "Tuyauterie/canalisation","Tuyau machine à laver/lave-vaisselle",
                 "chaudiere/chauffe-eau/ballon d'eau chaude"
             ]
         }       
