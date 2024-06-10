@@ -23,10 +23,24 @@ function Information(props){
                 </div>
                 <div className="rigth-content-frame">
                     <div className="rigth-item-frame">
+                        <div className='main-text'>Réparation d’une fuite de la vanne principale ou avant la vanne</div>
+                        <div className="rigth-content-item-frame">
+                            <ul>
+                                <li><span className='notification-text'>Gros matériel</span></li>
+                                <li><span className='notification-text'>Déplacement</span></li>                                
+                                <li><span className='notification-text'>Petites fournitures</span></li>
+                                <li><span className='notification-text'>Nettoyage du chantier</span></li>
+                                <li><span className='notification-text'>Main d’oeuvre</span></li>
+                                
+                            </ul>
 
-                    </div>
-                    <div className="rigth-bottom-item-frame">
+                            <div className="intervention-button-frame">
+                                <div className="intervention-button"><span className="intervention-button-text">Demender une intervention</span></div>
+                            </div>
+                        </div>
                         
+                    </div>
+                    <div className="rigth-bottom-item-frame">                        
                     </div>
                 </div>                                                            
         </div>        
