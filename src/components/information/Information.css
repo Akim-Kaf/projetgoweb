@@ -1,3 +1,37 @@
+body {
+    font-size: 100%;    
+}
+h1 {font-size: 3em;}
+@media screen and (max-width: 64em) {
+    body {
+        font-size: 90%;
+    }
+    h1 {
+            font-size: 2.5em;
+        }
+}
+@media screen and (max-width: 50em) {
+    body {
+        font-size: 75%;
+    }
+    h1 {
+        font-size: 2em;
+    }
+}
+@media screen and (max-width: 30em){
+    body {
+        font-size: 50%;
+    }
+    h1 {
+            font-size: 1.5em;
+        }
+    }
+
+p {
+    font-size: 1.5em;
+    line-height: 1.3 em;
+}
+
 .main-container{
     position:absolute;    
     /*z-index: auto;*/
@@ -16,7 +50,7 @@
 .nav-bar{
     display: flex;
     width: 100%;
-    height: 5.352%;
+    height: 5.2%;
     gap: 0px;
     justify-content: space-between;
     opacity: 0px;
@@ -32,9 +66,27 @@
     display: flex;    
 }
 
-.logo{
+.bottom-logo-frame{
+    width: 9.151%;
+    height: 100%;    
+    /*gap: 8px;*/
+    opacity: 0px;      
+    display: flex;
+    margin: auto;    
+}
+
+.logo-layout{
     width: 55.2%;
-    height: 68.573%;    
+    height: 68.57%;/*24px;*/
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    border: 1px solid white; /*to remove*/    
+}
+
+.logo{
+    width: 100%;
+    /*height: 100%;*/
     gap: 0px;
     opacity: 0px;
     margin: auto;        
@@ -57,7 +109,7 @@
     gap: 0px;
     opacity: 0px;    
     font-family: 'Catamaran';
-    font-size: 100%;
+    /*font-size: 100%;*/
     font-weight: 800;
     text-align: center;
     line-height: 29.52px;
@@ -240,14 +292,14 @@
     margin-top: 2%;    
     left: 1%;
     width: 127px;
-    height: 37px;
+    height: 7%;
     gap: 10px;
     opacity: 0px;    
     border: 1px solid black;    
 }
 
 .back-button{
-    width: 127px;
+    width: 100%;
     height: 100%;
     margin: auto;
     /*padding: 16px;*/
@@ -261,12 +313,12 @@
 }
 
 .back-button-text{
-    width: 127px;
-    height: 21px;
+    width: 100%;
+    /*height: 21px;*/
     gap: 0px;
     opacity: 0px;
     font-family: 'Poppins';
-    font-size: 14px;
+    /*font-size: 14px;*/
     font-weight: 600;
     line-height: 21px;
     text-align: center;
@@ -314,7 +366,8 @@ ul{
 
 .bottom-frame{    
     width: 100%;
-    height: 35px;
+    /*height: 35px;*/
+    height: 5.2%;
     /*top: 963px;*/
     gap: 10px;
     opacity: 0px;

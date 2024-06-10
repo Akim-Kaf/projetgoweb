@@ -5,7 +5,9 @@ function Information(props){
     <div className="main-container">
         <div className="nav-bar">
             <div className='logo-frame'>
-                <img className='logo' src='logo.png' alt='no icon'></img>
+                <div className="logo-layout">
+                    <img className='logo' src='logo.png' alt='no icon'></img>
+                </div>                
             </div>
             <div className='contact-frame'>
                 <label className='contact-text'>Contact</label><label className='red-text'>.</label>
@@ -29,8 +31,12 @@ function Information(props){
                 </div>                                                            
         </div>        
                     
-        <div className='bottom-frame'>        
-            <label className='bottom-text'>Goweb</label><label className='bottom-red-text'>.</label>
+        <div className='bottom-frame'>
+            <div className='bottom-logo-frame'>
+                <div className="logo-layout">
+                        <img className='logo' src='logo.png' alt='no icon'></img>
+                </div>
+            </div>                               
         </div>    
 
     </div>);
