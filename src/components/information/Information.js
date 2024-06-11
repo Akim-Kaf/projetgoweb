@@ -17,15 +17,34 @@ function Information(props){
                 <div className='content-frame'>            
                     <img  className='grid-frame' src="oip.png" alt="no icon"/> 
                     <div className="back-button-frame">
-                        <div className="back-button"><label className="back-button-text">Etape précédente</label></div>
+                        <div className="back-button"><span className="back-button-text">Bon à savoir</span></div>
                     </div>
-                    <div className='notification-frame'></div>
+                    <div className='notification-frame'>
+                        <span className='probleme-text'>
+                            Vous faites face à des WC bouchés qui ne se vident plus correctement ? Vous vous interrogez sur les raisons de ce blocage et les solutions pour y remédier ? Faites appel à un plombier de MesDépanneurs.fr pour un débouchage efficace et rapide de vos toilettes !
+                            <p>
+                                Informations utiles pour le cas "Débouchage de WC"
+                                Le coût du débouchage de WC sans sanibroyeur dépend de l'ampleur de l'engorgement de vos toilettes et de la complexité à éliminer le bouchon. Le cas "Débouchage de WC" comprend les prestations suivantes : 
+                                <dl>
+                                    <dt>- Les frais de déplacement et de main-d'œuvre, </dt>
+                                    <dt>- La fourniture du matériel (pompe manuelle, acides, furet électrique, etc) </dt>
+                                    <dt>- Le débouchage des WC, </dt>
+                                    <dt>- Le nettoyage du chantier.</dt>
+                                </dl>
+                                Dans les cas les plus complexes, où le dégorgement dure plus de deux heures, le coût total pourrait excéder le devis initial (si l'usage d'un furet électrique sur différents niveaux est requis par exemple).
+                                Néanmoins, sachez que le plombier vous préviendra en amont de toute modification des frais si cette situation se produit. 
+                            </p>                            
+                            
+                            
+                        </span>
+                    </div>
                 </div>
                 <div className="rigth-content-frame">
                     <div className="rigth-item-frame">
                         <div className='main-text'>Réparation d’une fuite de la vanne principale ou avant la vanne</div>
                         <div className="rigth-content-item-frame">
                             <ul>
+                                <li id="euro"><span className='notification-text'>Entre 150€ et 300€ TTC</span></li>
                                 <li><span className='notification-text'>Gros matériel</span></li>
                                 <li><span className='notification-text'>Déplacement</span></li>                                
                                 <li><span className='notification-text'>Petites fournitures</span></li>
@@ -41,6 +60,13 @@ function Information(props){
                         
                     </div>
                     <div className="rigth-bottom-item-frame">                        
+                        <span className="rigth-bottom-text">
+                        <b>Vous êtes recontactés sous 20 minutes après votre passage de commande.</b>
+                        </span>
+                        <p className='rigth-bottom-text-p'>Si l’origine de votre panne nécessite un diagnostic complémentaire, 
+                        il s’agit d’une intervention à part entière demandant l’exêrtise d’un professionnel. 
+                        Celle-ci fera l’objet d’une facturation.
+                        </p>
                     </div>
                 </div>                                                            
         </div>        
