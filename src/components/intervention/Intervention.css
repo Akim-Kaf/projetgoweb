@@ -1,0 +1,433 @@
+body {
+    font-size: 100%;    
+}
+h1 {font-size: 3em;}
+@media screen and (max-width: 64em) {
+    body {
+        font-size: 90%;
+    }
+    h1 {
+            font-size: 2.5em;
+        }
+}
+@media screen and (max-width: 50em) {
+    body {
+        font-size: 75%;
+    }
+    h1 {
+        font-size: 2em;
+    }
+}
+@media screen and (max-width: 30em){
+    body {
+        font-size: 50%;
+    }
+    h1 {
+            font-size: 1.5em;
+        }
+    }
+
+/*
+p{
+    font-size: 1.5em;
+    line-height: 1.3 em;
+}
+*/
+
+.main-container{
+    position:absolute;    
+    /*z-index: auto;*/
+    width: 100%;
+    height: 1024px;
+    gap: 48px;
+    opacity: 0px;
+    /*top: 170px;    */
+    /*left: 170px;          */
+    border-radius: 20px;
+    background: #F8F8F8;   
+    opacity: 0px;    
+
+}
+
+.nav-bar{
+    display: flex;
+    width: 100%;
+    height: 61px;
+    gap: 0px;
+    justify-content: space-between;
+    opacity: 0px;
+    background: #FFFFFF;
+}
+
+.logo-frame{
+    width: 9.151%;
+    /*height: 100%;    */
+    /*gap: 8px;*/
+    opacity: 0px;
+    background: #443D3C;      
+    display: flex;    
+}
+
+.bottom-logo-frame{
+    width: 9.151%;
+    height: 100%;    
+    /*gap: 8px;*/
+    opacity: 0px;      
+    display: flex;
+    margin: auto;    
+}
+
+.logo-layout{
+    width: 55.2%;
+    height: 24px;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    border: 1px solid white; /*to remove*/    
+}
+
+.logo{
+    width: 100%;
+    /*height: 100%;*/
+    gap: 0px;
+    opacity: 0px;
+    margin: auto;        
+}
+
+
+.contact-frame{
+    width: 9.151%;
+    height: 100%;
+    display: flex;    
+    justify-items: center;
+    gap: 0px;
+    opacity: 0px;
+    border-radius: 0px 10px 0px 0px;
+    background: #FF445F;
+}
+
+.contact-text{
+    /*width: 100%;*/
+    /*height: 100%;*/
+    gap: 0px;
+    opacity: 0px;    
+    font-family: 'Catamaran';
+    /*font-size: 100%;*/
+    font-weight: 800;
+    text-align: center;
+    margin: auto;
+    line-height: 29.52px;
+    color: #FFFFFF;
+    border: 1px solid black; /*to remove*/    
+
+}
+
+
+.main-frame{
+    display: flex;
+    width: 77.16%;
+    height: 756px;
+    padding: 5px;
+    opacity: 0px;       
+    margin: auto;
+    /*justify-items: center;*/
+    /*text-align: center;*/     
+    border: 1px solid red; /*to remove*/
+}
+
+.main-text{
+    /*width: 420px; */
+    width: 100%;
+    /*height: 20%; /*no*/
+    /*padding: 5px;        */
+    font-family:"poppins";
+    font-weight: 600;    
+    font-size: 1.5em;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: #FF445F;
+    border: 1px solid black; /*to remove*/   
+}
+
+.line-frame{
+    width: 7.5%;
+    height: 36%;        
+    /*margin-top: -8%;*/
+    transform: translateY(-80%);
+    border: 1px solid black; /*to remove*/            
+    padding: 5px;
+}
+
+.content-frame{    
+    width: 60%;
+    height: 736px;
+    margin: auto;
+    /*margin: auto;*/
+    /*transform: translateY(-10%);    */
+    /*margin-top: -105px;*/
+    padding: 10px;
+    /*margin-bottom: 200px;*/
+    /*gap: 10px;*/
+    border-radius: 10px 0px 0px 0px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    background: #FFFFFF;
+    border: 1px solid #F2F2F2;
+    box-shadow: 4px 7px 18px 7px #0000000D;
+}
+
+
+.grid-frame{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    width: 98%;
+    height: 335px;
+    /*padding: 10px;*/
+    gap: 12px;
+    opacity: 0px;    
+    border: 1px solid blue;        
+    margin: auto;
+    justify-content: center;    
+}
+
+.intputlayout{
+    position: relative;
+    width: 267px;
+    height: 47px;    
+    border-radius: 10px;
+    opacity: 0px;
+}
+
+input{    
+    position:absolute;
+    width: 90%; 
+    height: 90%;
+    top:0;
+}
+
+.rigth-content-frame{    
+    width: 30%;
+    height: 721px;
+    margin: auto;
+    justify-content: center;
+    /*transform: translateY(-10%);    */
+    /*margin-top: -105px;*/
+    padding: 10px;
+    /*margin-bottom: 200px;*/
+    /*gap: 10px;*/    
+    border: 1px 0px 0px 0px;
+    opacity: 0px;    
+    border: 1px solid green;    
+}
+
+.rigth-item-frame{    
+    width: 95%;
+    height: 325px;
+    margin: auto;
+    transform: translateY(1%);        
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    border-radius: 10px;
+    background: #FFF0F1;    
+    box-shadow: 4px 7px 18px 7px #0000000D;
+    border: 1px solid yellow;    
+}
+
+.rigth-content-item-frame{    
+    width: 100%;
+    height: 212px;
+    position: fixed;
+    /*margin: auto;*/
+    /*transform: translateY(-10%);    */
+    /*margin-top: -105px;*/
+    /*padding: 10px;*/
+    /*margin-bottom: 200px;*/
+    /*gap: 10px;*/    
+    bottom: 0;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;    
+    border: 1px solid orchid;    
+}
+
+.rigth-bottom-item-frame{    
+    width: 95%;
+    height: 155px;
+    margin: auto;
+    margin-top: 10%;
+    /*transform: translateY(-10%);    */
+    /*margin-top: -105px;*/
+    /*padding: 10px;*/
+    /*margin-bottom: 200px;*/
+    /*gap: 10px;*/    
+    border: 1px 0px 0px 0px;
+    opacity: 0px;    
+    border: 1px solid darkblue;    
+}
+
+.rigth-bottom-text{
+    font-family: Poppins;
+    /*font-size: 10px;*/
+    font-weight: 600;
+    line-height: 1em;
+    text-align: left;
+    color: #443D3C;
+}
+
+.rigth-bottom-text-p{
+    font-family: Poppins;
+    /*font-size: 10px;*/
+    font-weight: 400;
+    line-height: 1em;
+    text-align: left;
+    color: #443D3C;
+}
+
+
+
+.back-button-frame{
+    position: relative;
+    margin-top: 2%;    
+    left: 1%;
+    width: 127px;
+    height: 44px;
+    gap: 10px;
+    opacity: 0px;    
+    border: 1px solid black;    
+}
+
+.back-button{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    /*padding: 16px;*/
+    /*gap: 8px;*/
+    border-radius: 43px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    display: flex;
+    border: 1px solid #FF445F;
+
+}
+
+.back-button-text{
+    width: 100%;
+    /*height: 21px;*/
+    gap: 0px;
+    opacity: 0px;
+    font-family: 'Poppins';
+    /*font-size: 14px;*/
+    font-weight: 600;
+    line-height: 1.3em;
+    text-align: left;
+    color: #443D3C;
+    margin: auto;
+    border: 1px solid #FF445F;
+
+}
+
+.notification-frame{
+    width: 98%;
+    height: 315px;
+    margin: auto;
+    transform: translateY(6%);
+    gap: 0px;
+    border-radius: 10px;    
+    opacity: 0px;
+    /*margin-top: 45px;*/
+    /*margin-bottom: 34px;    */
+    justify-content: center;
+    display: grid;
+    border: 1px solid #FF445F;
+}
+
+
+
+ul{
+    list-style-image:
+    url("../../../public/redok.png");
+    margin-top: 0;  
+    border: 1px solid black;    
+}
+
+li#euro{
+    list-style-image:
+    url("../../../public/cercle-euro.png");
+}
+
+.notification-text{
+    font-family: 'Poppins';
+    /*font-size: 14px;*/
+    font-weight: 400;
+    line-height: 1.3em;
+    text-align: left;
+    font-family: Poppins;
+    letter-spacing: -0.01em;
+    color: #443D3C;
+}
+
+
+.intervention-button-frame{
+    position: relative;        
+    width: 75%;
+    height: 35px;
+    gap: 10px;
+    opacity: 0px;    
+    border: 1px solid black;    
+}
+
+.intervention-button{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    /*padding: 16px;*/
+    /*gap: 8px;*/
+    border-radius: 43px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    display: flex;
+    background-color: #FF445F;    
+
+}
+
+.intervention-button-text{
+    width: 100%;
+    /*height: 21px;*/
+    gap: 0px;
+    opacity: 0px;
+    font-family: 'Poppins';
+    /*font-size: 14px;*/
+    font-weight: 600;
+    line-height: 1.3em;
+    text-align: center;
+    color: white;
+    margin: auto;    
+}
+
+.bottom-frame{    
+    width: 100%;
+    /*height: 35px;*/
+    height: 61px;
+    /*top: 963px;*/
+    position:absolute;
+    bottom: 0;
+    gap: 10px;
+    opacity: 0px;
+    background: #000000;
+    text-align: center;
+    /*padding: 71px 685px 71px 685px;*/ /*21px;*/ 
+    border-radius: 0px 0px 10px 10px;       
+}
+
+.probleme-text{
+    font-family: Poppins;
+    font-size: 0.8em;
+    font-weight: 600;
+    line-height: 1em;
+    text-align: left;
+    color: #443D3C;
+}
+
+.red-text{
+    color: #FF445F;
+}
+

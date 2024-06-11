@@ -2,11 +2,12 @@
 import './App.css';
 //import Onboarding from './components/onboarding/Onboarding';
 //import Questionnaire from './components/questionnaire/Questionnaire';
-import Information from './components/information/Information';
+//import Information from './components/information/Information';
+import Intervention from './components/intervention/Intervention'
 
 function App() {
   return (
-    <Information/>
+    <Intervention/>
   );
 }
 
