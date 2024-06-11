@@ -52,7 +52,7 @@ p{
 .nav-bar{
     display: flex;
     width: 100%;
-    height: 5.2%;
+    height: 2.25em;
     gap: 0px;
     justify-content: space-between;
     opacity: 0px;
@@ -61,7 +61,7 @@ p{
 
 .logo-frame{
     width: 9.151%;
-    height: 100%;    
+    /*height: 100%;    */
     /*gap: 8px;*/
     opacity: 0px;
     background: #443D3C;      
@@ -79,7 +79,7 @@ p{
 
 .logo-layout{
     width: 55.2%;
-    height: 68.57%;/*24px;*/
+    height: 24px;
     margin: auto;
     justify-content: center;
     display: flex;
@@ -125,7 +125,7 @@ p{
 .main-frame{
     display: flex;
     width: 77.16%;
-    height: 87.461%;
+    height: 572px;
     padding: 5px;
     opacity: 0px;       
     margin: auto;
@@ -159,7 +159,7 @@ p{
 
 .content-frame{    
     width: 60%;
-    height: 90%;
+    height: 515px;
     margin: auto;
     /*margin: auto;*/
     /*transform: translateY(-10%);    */
@@ -180,7 +180,7 @@ p{
     display: grid;
     grid-template-columns: repeat(1,1fr);
     width: 98%;
-    height: 40%;/*283px*/
+    height: 206px;
     /*padding: 10px;*/
     gap: 16px;
     opacity: 0px;    
@@ -191,7 +191,7 @@ p{
 
 .rigth-content-frame{    
     width: 30%;
-    height: 90%;
+    height: 515px;
     margin: auto;
     justify-content: center;
     /*transform: translateY(-10%);    */
@@ -206,7 +206,7 @@ p{
 
 .rigth-item-frame{    
     width: 95%;
-    height: 63%;
+    height: 325px;
     margin: auto;
     transform: translateY(1%);        
     border: 1px 0px 0px 0px;
@@ -219,7 +219,7 @@ p{
 
 .rigth-content-item-frame{    
     width: 100%;
-    height: 65%;
+    height: 212px;
     position: fixed;
     /*margin: auto;*/
     /*transform: translateY(-10%);    */
@@ -235,7 +235,7 @@ p{
 
 .rigth-bottom-item-frame{    
     width: 95%;
-    height: 30%;
+    height: 155px;
     margin: auto;
     margin-top: 10%;
     /*transform: translateY(-10%);    */
@@ -250,18 +250,18 @@ p{
 
 .rigth-bottom-text{
     font-family: Poppins;
-    font-size: 10px;
+    /*font-size: 10px;*/
     font-weight: 600;
-    line-height: 15px;
+    line-height: 1em;
     text-align: left;
     color: #443D3C;
 }
 
 .rigth-bottom-text-p{
     font-family: Poppins;
-    font-size: 10px;
+    /*font-size: 10px;*/
     font-weight: 400;
-    line-height: 15px;
+    line-height: 1em;
     text-align: left;
     color: #443D3C;
 }
@@ -357,7 +357,7 @@ p{
     font-family: 'Poppins';
     /*font-size: 14px;*/
     font-weight: 600;
-    line-height: 21px;
+    line-height: 1.3em;
     text-align: left;
     color: #443D3C;
     margin: auto;
@@ -367,9 +367,9 @@ p{
 
 .notification-frame{
     width: 98%;
-    height: 42%;
+    height: 237px;
     margin: auto;
-    transform: translateY(10%);
+    transform: translateY(6%);
     gap: 0px;
     border-radius: 10px;    
     opacity: 0px;
@@ -396,20 +396,19 @@ li#euro{
 
 .notification-text{
     font-family: 'Poppins';
-    font-size: 14px;
+    /*font-size: 14px;*/
     font-weight: 400;
-    line-height: 21px;
+    line-height: 1.3em;
     text-align: left;
     font-family: Poppins;
     letter-spacing: -0.01em;
     color: #443D3C;
-
 }
 
 
 .intervention-button-frame{
     position: relative;        
-    width: 245px;
+    width: 75%;
     height: 35px;
     gap: 10px;
     opacity: 0px;    
@@ -438,7 +437,7 @@ li#euro{
     font-family: 'Poppins';
     /*font-size: 14px;*/
     font-weight: 600;
-    line-height: 21px;
+    line-height: 1.3em;
     text-align: center;
     color: white;
     margin: auto;    
@@ -447,7 +446,7 @@ li#euro{
 .bottom-frame{    
     width: 100%;
     /*height: 35px;*/
-    height: 5.2%;
+    height: 2.25em;
     /*top: 963px;*/
     gap: 10px;
     opacity: 0px;
@@ -459,9 +458,9 @@ li#euro{
 
 .probleme-text{
     font-family: Poppins;
-    font-size: 10px;
+    font-size: 0.8em;
     font-weight: 600;
-    line-height: 15px;
+    line-height: 1em;
     text-align: left;
     color: #443D3C;
 }
