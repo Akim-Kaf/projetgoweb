@@ -38,7 +38,7 @@ p{
     position:absolute;    
     /*z-index: auto;*/
     width: 100%;
-    height: 100%;
+    height: 1024px;
     gap: 48px;
     opacity: 0px;
     /*top: 170px;    */
@@ -52,7 +52,7 @@ p{
 .nav-bar{
     display: flex;
     width: 100%;
-    height: 2.25em;
+    height: 61px;
     gap: 0px;
     justify-content: space-between;
     opacity: 0px;
@@ -125,7 +125,7 @@ p{
 .main-frame{
     display: flex;
     width: 77.16%;
-    height: 572px;
+    height: 756px;
     padding: 5px;
     opacity: 0px;       
     margin: auto;
@@ -159,7 +159,7 @@ p{
 
 .content-frame{    
     width: 60%;
-    height: 515px;
+    height: 736px;
     margin: auto;
     /*margin: auto;*/
     /*transform: translateY(-10%);    */
@@ -180,7 +180,7 @@ p{
     display: grid;
     grid-template-columns: repeat(1,1fr);
     width: 98%;
-    height: 206px;
+    height: 309px;
     /*padding: 10px;*/
     gap: 16px;
     opacity: 0px;    
@@ -191,7 +191,7 @@ p{
 
 .rigth-content-frame{    
     width: 30%;
-    height: 515px;
+    height: 721px;
     margin: auto;
     justify-content: center;
     /*transform: translateY(-10%);    */
@@ -268,68 +268,12 @@ p{
 
 
 
-
-.card{
-    display: flex;       
-    width: 100%;/*423px;*/
-    height: 40%;
-    /*padding: 5px;*/
-    gap: 0px;
-    border-radius: 10px;
-    justify-content: space-between;
-    opacity: 0px;
-    background: #F2F2F2;
-}
-
-
-.card-text-frame{    
-    justify-content: center;
-    display:flex;
-    width: 100%;    
-    gap: 0px;
-    opacity: 0px;    
-    margin: auto;
-    text-align: left;
-    border: 1px solid #000000;
-}
-
-.card-text{    
-    width: 100%;
-    height: 14px;
-    top: 12px;
-    gap: 0px;
-    opacity: 0px;        
-    font-family: "Poppins";
-    font-size: 80%;
-    font-weight: 600;    
-    margin: auto;
-}
-
-
-.card-icon-frame{    
-    width: 24px;
-    height: 24px;
-    gap: 0px;
-    opacity: 0px;
-    margin: auto;
-}
-
-
-.card-icon{        
-    width: 20px;
-    height: 20px;
-    top: 2px;
-    left: 2px;
-    gap: 0px;
-    opacity: 0px;
-}
-
 .back-button-frame{
     position: relative;
     margin-top: 2%;    
     left: 1%;
     width: 127px;
-    height: 7%;
+    height: 44px;
     gap: 10px;
     opacity: 0px;    
     border: 1px solid black;    
@@ -367,7 +311,7 @@ p{
 
 .notification-frame{
     width: 98%;
-    height: 237px;
+    height: 315px;
     margin: auto;
     transform: translateY(6%);
     gap: 0px;
@@ -446,8 +390,10 @@ li#euro{
 .bottom-frame{    
     width: 100%;
     /*height: 35px;*/
-    height: 2.25em;
+    height: 61px;
     /*top: 963px;*/
+    position:absolute;
+    bottom: 0;
     gap: 10px;
     opacity: 0px;
     background: #000000;
