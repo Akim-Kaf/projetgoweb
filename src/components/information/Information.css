@@ -99,6 +99,7 @@ p{
     width: 9.151%;
     height: 100%;
     display: flex;    
+    justify-items: center;
     gap: 0px;
     opacity: 0px;
     border-radius: 0px 10px 0px 0px;
@@ -106,16 +107,16 @@ p{
 }
 
 .contact-text{
-    width: 100%;
-    height: 100%;
+    /*width: 100%;*/
+    /*height: 100%;*/
     gap: 0px;
     opacity: 0px;    
     font-family: 'Catamaran';
     /*font-size: 100%;*/
     font-weight: 800;
     text-align: center;
-    line-height: 29.52px;
     margin: auto;
+    line-height: 29.52px;
     color: #FFFFFF;
     border: 1px solid black; /*to remove*/    
 
