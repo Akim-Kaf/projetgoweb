@@ -17,39 +17,48 @@ function Intervention(props){
                 <div className='content-frame'>            
                     
                     <form>
-                        <div className='grid-frame'>                        
-                            <fieldset className='intputlayout'>
-                                <legend>Prénom*</legend>
-                                <input name="prenom" required></input> 
-                            </fieldset>
-                            <fieldset className='intputlayout'>
-                                <legend>Nom*</legend>
-                                <input name="nom" required></input> 
-                            </fieldset>
-                            <fieldset className='intputlayout'>
-                                <legend>Adresse (numéro et voie)*</legend>
-                                <input className=''></input> 
-                            </fieldset>
-                            <fieldset className='intputlayout'>
-                                <legend>Code postal*</legend>
-                                <input className=''></input> 
-                            </fieldset>
-                            <fieldset className='intputlayout'>
-                                <legend>Téléphone*</legend>
-                                <input className=''></input> 
-                            </fieldset>
-                            <fieldset className='intputlayout'>
-                                <legend>Adresse email*</legend>
-                                <input className=''></input> 
-                            </fieldset>
+                        <div className='customer-information-frame'>
+                            <div className='information-layout'><div className='info-icon-frame'><label className='information-text'>1</label></div><div className='information-text-layout'><label className='information-text'>Information</label></div></div>
+                            <div className='grid-frame'>                        
+                                <fieldset className='intputlayout'>
+                                    <legend>Prénom*</legend>
+                                    <input name="prenom" required></input> 
+                                </fieldset>
+                                <fieldset className='intputlayout'>
+                                    <legend>Nom*</legend>
+                                    <input name="nom" required></input> 
+                                </fieldset>
+                                <fieldset className='intputlayout'>
+                                    <legend>Adresse (numéro et voie)*</legend>
+                                    <input className=''></input> 
+                                </fieldset>
+                                <fieldset className='intputlayout'>
+                                    <legend>Code postal*</legend>
+                                    <input className=''></input> 
+                                </fieldset>
+                                <fieldset className='intputlayout'>
+                                    <legend>Téléphone*</legend>
+                                    <input className=''></input> 
+                                </fieldset>
+                                <fieldset className='intputlayout'>
+                                    <legend>Adresse email*</legend>
+                                    <input className=''></input> 
+                                </fieldset>
 
+                            </div>
                         </div>
                         <div>
-                            Modes de paiement
+                            <div className='pay-layout'>
+                                <div className='info-icon-frame'>
+                                    <label className='information-text'>2</label>
+                                </div>
+                                <div className='pay-text-layout'>
+                                    <label className='information-text'>Modes de paiement</label>
+                                    </div>
+                            </div>
                             <div className='card'>
                                 <div className='card-text-frame'><label className='card-text'>Payer sur place</label></div>
-                                <div className='card-icon-frame'>
-                                    {/*<img className='card-icon' src='flecherouge.png' alt="not icon"/>*/}
+                                <div className='card-icon-frame'>                                   
                                     <input name="payersurplace" className='card-icon' type="checkbox"></input>
                                 </div>                            
                             </div> 
@@ -62,23 +71,28 @@ function Intervention(props){
                             <div className='condition-frame'>                                
                                 <div className='condition-element'>
                                     <input id="checkbox-1" name="checkbox-1" className='card-icon' type="checkbox"></input>
-                                    <label className='label-checkbox'>J’accepte les conditions générales d’utilisation du service</label>
+                                    <label className='label-checkbox'>J’accepte les <a href="http://localhost:3000/" target="_blank" rel="noreferrer" >conditions générales d’utilisation du service</a></label>
                                 </div>
                                 <div className='condition-element'>
-                                <input id="checkbox-2" name="checkbox-2" className='card-icon' type="checkbox"></input>
-                                <label className='label-checkbox' for="checkbox-2">J’ai bien pris connaissance des dispositions relatives au droit de rétractation</label>
+                                    <input id="checkbox-2" name="checkbox-2" className='card-icon' type="checkbox"></input>
+                                    <label className='label-checkbox' for="checkbox-2">J’ai bien pris connaissance des <a href="http://localhost:3000/" target="_blank" rel="noreferrer">dispositions relatives au droit de rétractation</a></label>
                                 </div>                                
                                 <div className='condition-element'>
-                                <input id="checkbox-3" name="checkbox-3" className='card-icon' type="checkbox"></input>    
-                                <label className='label-checkbox' for="checkbox-3">Je souhaite recevoir par voie électronique des offres commerciales personnalisées</label>
+                                    <input id="checkbox-3" name="checkbox-3" className='card-icon' type="checkbox"></input>    
+                                    <label className='label-checkbox' for="checkbox-3">Je souhaite recevoir par voie électronique des offres commerciales personnalisées</label>
                                 </div>                                
                             </div>                           
                         </div>
                         <div className='form-back-pay-btn-frame'>
-                            <div className="back-button-frame">
-                                <div className="back-button"><span className="back-button-text">Bon à savoir</span></div>                        
+                            <div className="back-button-frame">                                
+                                <div className="back-button">
+                                    <div className='card-icon-frame'>
+                                        <img className='card-icon' src='flechegauche.png' alt="not icon"/>                                    
+                                    </div>
+                                    <span className="back-button-text">Etape précédente</span>
+                                </div>                        
                             </div>
-                            <div className="pay-button-frame">
+                            <div className="pay-button-frame">                                
                                 <div className="pay-button"><span className="pay-button-text">Passer commande et payer en ligne</span></div>
                             </div>
                         </div>
@@ -87,24 +101,30 @@ function Intervention(props){
                 </div>
                 <div className="rigth-content-frame">
                     <div className="rigth-item-frame">
-                        <div className='main-text'>Réparation d’une fuite de la vanne principale ou avant la vanne</div>
-                        <div className="rigth-content-item-frame">
-                            <ul>
-                                <li id="euro"><span className='notification-text'>Entre 150€ et 300€ TTC</span></li>
-                                <li><span className='notification-text'>Gros matériel</span></li>
-                                <li><span className='notification-text'>Déplacement</span></li>                                
-                                <li><span className='notification-text'>Petites fournitures</span></li>
-                                <li><span className='notification-text'>Nettoyage du chantier</span></li>
-                                <li><span className='notification-text'>Main d’oeuvre</span></li>
-                                
-                            </ul>
-
-                            <div className="intervention-button-frame">
-                                <div className="intervention-button"><span className="intervention-button-text">Demender une intervention</span></div>
-                            </div>
-                        </div>
+                        <div className='main-text'>Réparation d’une fuite de la vanne principale ou avant la vanne</div>                        
+                        <img className='line-frame' src='redline.png' alt='no icon'/>
+                        <div className="rigth-content-items-frame">
+                            <div className="rigth-content-items-ul">
+                                <ul>
+                                    <li id="euro"><span className='notification-text'>Entre 150€ et 300€ TTC</span></li>
+                                    <li><span className='notification-text'>Gros matériel</span></li>
+                                    <li><span className='notification-text'>Déplacement</span></li>                                
+                                    <li><span className='notification-text'>Petites fournitures</span></li>
+                                    <li><span className='notification-text'>Nettoyage du chantier</span></li>
+                                    <li><span className='notification-text'>Main d’oeuvre</span></li>                                
+                                </ul>
+                            </div>                                                        
+                        </div>                        
                         
                     </div>
+
+                    <div className='assistance-frame'>
+                        <div className='assistance-text-frame'>
+                            <div className='assistance-text'>Besoin d’une assistance téléphonique ?</div></div>                                                
+                            <div className="assistance-button"><span className="assistance-button-text">Afficher le numéro</span>
+                        </div>                        
+                    </div>
+
                     <div className="rigth-bottom-item-frame">                        
                         <span className="rigth-bottom-text">
                         <b>Vous êtes recontactés sous 20 minutes après votre passage de commande.</b>
