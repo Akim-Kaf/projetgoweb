@@ -44,12 +44,45 @@ function Intervention(props){
                             </fieldset>
 
                         </div>
-                        
-                    </form>
-
-                    <div className="back-button-frame">
-                        <div className="back-button"><span className="back-button-text">Bon à savoir</span></div>
-                    </div>
+                        <div>
+                            Modes de paiement
+                            <div className='card'>
+                                <div className='card-text-frame'><label className='card-text'>Payer sur place</label></div>
+                                <div className='card-icon-frame'>
+                                    {/*<img className='card-icon' src='flecherouge.png' alt="not icon"/>*/}
+                                    <input name="payersurplace" className='card-icon' type="checkbox"></input>
+                                </div>                            
+                            </div> 
+                            <div className='card'>
+                                <div className='card-text-frame'><label className='card-text'>Payer en ligne</label></div>
+                                <div className='card-icon-frame'>                                    
+                                    <input name="payerenligne" className='card-icon' type="checkbox"></input>
+                                </div>                            
+                            </div>
+                            <div className='condition-frame'>                                
+                                <div className='condition-element'>
+                                    <input id="checkbox-1" name="checkbox-1" className='card-icon' type="checkbox"></input>
+                                    <label className='label-checkbox'>J’accepte les conditions générales d’utilisation du service</label>
+                                </div>
+                                <div className='condition-element'>
+                                <input id="checkbox-2" name="checkbox-2" className='card-icon' type="checkbox"></input>
+                                <label className='label-checkbox' for="checkbox-2">J’ai bien pris connaissance des dispositions relatives au droit de rétractation</label>
+                                </div>                                
+                                <div className='condition-element'>
+                                <input id="checkbox-3" name="checkbox-3" className='card-icon' type="checkbox"></input>    
+                                <label className='label-checkbox' for="checkbox-3">Je souhaite recevoir par voie électronique des offres commerciales personnalisées</label>
+                                </div>                                
+                            </div>                           
+                        </div>
+                        <div className='form-back-pay-btn-frame'>
+                            <div className="back-button-frame">
+                                <div className="back-button"><span className="back-button-text">Bon à savoir</span></div>                        
+                            </div>
+                            <div className="pay-button-frame">
+                                <div className="pay-button"><span className="pay-button-text">Passer commande et payer en ligne</span></div>
+                            </div>
+                        </div>
+                    </form>                    
                     
                 </div>
                 <div className="rigth-content-frame">
