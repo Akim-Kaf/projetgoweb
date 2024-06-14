@@ -1,4 +1,4 @@
-.main-container{
+.questionnaire-main-container{
     position:absolute;    
     /*z-index: auto;*/
     width: 100%;
@@ -13,7 +13,7 @@
 
 }
 
-.nav-bar{
+.questionnaire-nav-bar{
     display: flex;
     width: 100%;
     height: 5.352%;
@@ -23,7 +23,7 @@
     background: #FFFFFF;
 }
 
-.logo-frame{
+.questionnaire-logo-frame{
     width: 9.151%;
     height: 100%;
     /*gap: 8px;*/
@@ -32,7 +32,7 @@
     display: flex;    
 }
 
-.logo{
+.questionnaire-logo{
     width: 55.2%;
     height: 68.573%;
     gap: 0px;
@@ -41,7 +41,7 @@
 }
 
 
-.contact-frame{
+.questionnaire-contact-frame{
     width: 9.151%;
     height: 100%;
     display: flex;    
@@ -51,7 +51,7 @@
     background: #FF445F;
 }
 
-.contact-text{
+.questionnaire-contact-text{
     width: 65px;
     height: 30px;
     gap: 0px;
@@ -67,7 +67,7 @@
 }
 
 
-.main-frame{
+.questionnaire-main-frame{
     width: 77.16%;
     height: 87.461%;
     padding: 5px;
@@ -79,7 +79,7 @@
     border: 1px solid red; /*to remove*/
 }
 
-.main-text{
+.questionnaire-main-text{
     /*width: 420px; */
     width: 100%;
     height: 43%; /*no*/
@@ -93,7 +93,7 @@
     border: 1px solid black; /*to remove*/    
 }
 
-.line-frame{
+.questionnaire-line-frame{
     width: 7.5%;
     height: 36%;        
     /*margin-top: -8%;*/
@@ -102,7 +102,7 @@
     padding: 5px;
 }
 
-.content-frame{
+.questionnaire-content-frame{
     width: 92%;
     height: 90%;
     transform: translateY(-10%);    
@@ -120,7 +120,7 @@
 
 }
 
-.grid-frame{
+.questionnaire-grid-frame{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     width: 93%;
@@ -133,7 +133,7 @@
     justify-content: center;
 }
 
-.card{
+.questionnaire-card{
     display: flex;       
     width: 95.5%;/*423px;*/
     height: 35px;
@@ -146,7 +146,7 @@
 }
 
 
-.card-text-frame{    
+.questionnaire-card-text-frame{    
     justify-content: center;
     display:flex;
     width: 100%;    
@@ -157,7 +157,7 @@
     border: 1px solid #000000;
 }
 
-.card-text{    
+.questionnaire-card-text{    
     width: 100%;
     height: 14px;
     top: 12px;
@@ -170,7 +170,7 @@
 }
 
 
-.card-icon-frame{    
+.questionnaire-card-icon-frame{    
     width: 24px;
     height: 24px;
     gap: 0px;
@@ -179,7 +179,7 @@
 }
 
 
-.card-icon{        
+.questionnaire-card-icon{        
     width: 20px;
     height: 20px;
     top: 2px;
@@ -188,7 +188,7 @@
     opacity: 0px;
 }
 
-.back-button-frame{
+.questionnaire-back-button-frame{
     width: 127px;
     height: 37px;
     gap: 10px;
@@ -196,7 +196,7 @@
     border: 1px solid black;
 }
 
-.back-button{
+.questionnaire-back-button{
     width: 127px;
     height: 80%;
     /*padding: 16px;*/
@@ -209,7 +209,7 @@
 
 }
 
-.back-button-text{
+.questionnaire-back-button-text{
     width: 127px;
     height: 21px;
     gap: 0px;
@@ -225,7 +225,7 @@
 
 }
 
-.notification-frame{
+.questionnaire-notification-frame{
     width: 92%;
     height: 80%;
     transform: translateY(5%);
@@ -243,7 +243,7 @@
 
 ul{
     list-style-image:
-    url("../../../public/ok.png");
+    url("../../assets/images/ok.png");
     border: 1px solid #FF445F;
     justify-content: center;
     display: grid;
@@ -251,7 +251,7 @@ ul{
 
 
 
-.notification-text{
+.questionnaire-notification-text{
     font-family: 'Poppins';
     font-size: 14px;
     font-weight: 400;
@@ -260,7 +260,7 @@ ul{
 }
 
 
-.bottom-frame{    
+.questionnaire-bottom-frame{    
     width: 100%;
     height: 35px;
     /*top: 963px;*/
@@ -272,7 +272,7 @@ ul{
     border-radius: 0px 0px 10px 10px;       
 }
 
-.bottom-text{
+.questionnaire-bottom-text{
     font-family: 'Aller';
     font-size: 20px;
     font-style: italic;
@@ -281,7 +281,7 @@ ul{
     color: #FFFFFF;
 }
 
-.red-text{
+.questionnaire-red-text{
     color: #FF445F;
 }
 

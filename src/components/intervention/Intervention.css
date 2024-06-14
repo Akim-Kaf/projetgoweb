@@ -518,14 +518,14 @@ input{
 
 ul{
     list-style-image:
-    url("../../../public/redok.png");
+    url("../../assets/images/redok.png");
     border: 1px solid black;     
     padding-left: 21px;    
 }
 
 li#euro{
     list-style-image:
-    url("../../../public/cercle-euro.png");
+    url("../../assets/images/cercle-euro.png");
 }
 
 .notification-text{

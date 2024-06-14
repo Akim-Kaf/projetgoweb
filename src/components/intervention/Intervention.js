@@ -1,4 +1,8 @@
 import './Intervention.css';
+import Logo from './../../assets/images/logo.png';
+import Flechegauche from './../../assets/images/flechegauche.png';
+import Redline from './../../assets/images/redline.png';
+
 function Intervention(props){
            
     return (
@@ -6,7 +10,7 @@ function Intervention(props){
         <div className="nav-bar">
             <div className='logo-frame'>
                 <div className="logo-layout">
-                    <img className='logo' src='logo.png' alt='no icon'></img>
+                    <img className='logo' src={Logo} alt='no icon'></img>
                 </div>                
             </div>
             <div className='contact-frame'>
@@ -87,7 +91,7 @@ function Intervention(props){
                             <div className="back-button-frame">                                
                                 <div className="back-button">
                                     <div className='card-icon-frame'>
-                                        <img className='card-icon' src='flechegauche.png' alt="not icon"/>                                    
+                                        <img className='card-icon' src={Flechegauche} alt="not icon"/>                                    
                                     </div>
                                     <span className="back-button-text">Etape précédente</span>
                                 </div>                        
@@ -102,7 +106,7 @@ function Intervention(props){
                 <div className="rigth-content-frame">
                     <div className="rigth-item-frame">
                         <div className='main-text'>Réparation d’une fuite de la vanne principale ou avant la vanne</div>                        
-                        <img className='line-frame' src='redline.png' alt='no icon'/>
+                        <img className='line-frame' src={Redline} alt='no icon'/>
                         <div className="rigth-content-items-frame">
                             <div className="rigth-content-items-ul">
                                 <ul>
@@ -140,7 +144,7 @@ function Intervention(props){
         <div className='bottom-frame'>
             <div className='bottom-logo-frame'>
                 <div className="logo-layout">
-                        <img className='logo' src='logo.png' alt='no icon'></img>
+                        <img className='logo' src={Logo} alt='no icon'></img>
                 </div>
             </div>                               
         </div>    
