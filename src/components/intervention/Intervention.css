@@ -159,24 +159,25 @@ p{
 .customer-information-frame{
     width: 98%;
     height: 335px;
-    border: 1px solid green;        
+    border: 1px solid green;    
+    gap: 10px;
+
 }
 
 .information-layout{
     width: 151px;
     height: 44px;
-    display: flex;    
+    display: flex;        
     gap: 10px;
     border: 1px solid black;        
+    padding: 10px 0px 10px 0px;
 }
 
 .info-icon-frame{    
-    position: relative;
+    display: flex;
+    justify-content: center;
     width: 24px;
     height: 24px;
-    text-align: center;
-    gap: 0px;
-    opacity: 0px;
     margin: auto;
     color: white;
     background: #FF445F;
@@ -192,41 +193,64 @@ p{
     border: 1px solid black;
 }
 
+.point-text{        
+    width: 9px;
+    height: 30px;
+    font-family: "Catamaran", sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 24.3px;
+    text-align: center;
+    border: 1px solid black;
+}
+
 .information-text{
     font-family: 'Poppins',sans-serif;
     font-size: 18px;
     font-weight: 600;
     line-height: 24.3px;
     letter-spacing: -0.01em;
-    text-align: left;    
+    text-align: left;
+    color: #443D3C;    
 }
 
+pay-information-frame{
+    width: 544px;
+    height: 158px;
+    gap: 10px;
+    border-radius: 10px 0px 0px 0px;
+    border: 1px solid yellow;        
+
+}
 .pay-layout{
     width: 214px;
     height: 44px;
     display: flex;    
-    gap: 10px;
     border: 1px solid black;        
 }
 
 .pay-text-layout{
     width: 180px;
-    height: 24px;
+    height: 24px;    
     gap: 0px;
     opacity: 0px;
     margin: auto;
-    border: 1px solid black;
+    border: 1px solid black;    
 }
+
+
+
 
 .grid-frame{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    width: 98%;    
-    gap: 12px;
+    width: 544px;    
+    height: 290px;
+    /*gap: 12px;*/
     opacity: 0px;    
     border: 1px solid blue;        
-    margin: auto;
-    justify-content: center;    
+    /*margin: auto;*/
+    /*justify-content: center;    */
 }
 
 .intputlayout{
@@ -236,13 +260,13 @@ p{
     border-radius: 10px;
     opacity: 0px;
 }
-
+/*
 input{    
     position:absolute;
     width: 92%; 
     height: 90%;
     top:0;
-}
+}*/
 
 .card{
     display: flex;
@@ -383,18 +407,22 @@ input{
 }
 
 .assistance-text-frame{
+    display: flex;
     width: 355px;
-    height: 24px;
+    height: 44px;
+    align-items: center;
     border: 1px solid black;  
     margin: auto;    
 }
-.assistance-text{    
+.assistance-text{
+    width: 355px;
+    height: 24px;    
     font-family: 'Poppins' , sans-serif;
     font-size: 1.125em;
     font-weight: 600;
     line-height: 24.3px;
-    letter-spacing: -0.01em;
-    text-align: center;    
+    letter-spacing: -0.0125em;
+    text-align: left;        
     border: 1px solid orchid;  
     color: #FF445F;  
 }
