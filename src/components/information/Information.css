@@ -329,14 +329,14 @@ p{
 
 ul{
     list-style-image:
-    url("../../../public/redok.png");
+    url("../../../src/assets/images/redok.png");
     margin-top: 0;  
     border: 1px solid black;    
 }
 
 li#euro{
     list-style-image:
-    url("../../../public/cercle-euro.png");
+    url("../../../src/assets/images/cercle-euro.png");
 }
 
 .information-notification-text{

@@ -1,6 +1,8 @@
 body {
     font-size: 100%;    
+    /*font-family:"poppins", sans-serif;*/
 }
+
 h1 {font-size: 3em;}
 @media screen and (max-width: 64em) {
     body {
@@ -533,8 +535,7 @@ li#euro{
     font-size: 0.875em;
     font-weight: 500;
     line-height: 1.3em;
-    text-align: left;
-    font-family: 'Poppins',sans-serif;
+    text-align: left;    
     letter-spacing: -0.01em;
     color: #443D3C;
 }

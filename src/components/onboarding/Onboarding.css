@@ -8,6 +8,10 @@
     opacity: 0px;
 }
 
+a{
+    text-decoration:none;
+    color: white;
+}
 
 .onboarding-center-grid{
     text-align: center;
@@ -33,9 +37,9 @@
 .onboarding-main-text{
     width: 703px; /*no*/
     height: 81px; /*no*/        
-    font-family:"poppins";
+    font-family:"poppins", sans-serif;
     font-weight: 700;
-    font-size: 54px;
+    font-size: 3.375em;
     line-height: 81px;
     color: #FFFFFF;
     border: 1px solid #FFFFFF; /*to remove*/
@@ -94,15 +98,17 @@
     opacity: 0px;
 }
 
+/*
 .onboarding-card-text-frame{
-    width: 84px;
+    width: 80%;
     height: 21px;
     justify-content: center;
     padding: 0px 5px 0px 5px;
     gap: 10px;
     opacity: 0px;
     background: #FF445F;    
-}
+}*/
+
 
 .onboarding-card-text{
     height: 21px;
@@ -114,6 +120,7 @@
     font-weight: 700;
     line-height: 21px;
     text-align: center;
+    background: #FF445F;    
 }
 
 .onboarding-bottom-frame{    

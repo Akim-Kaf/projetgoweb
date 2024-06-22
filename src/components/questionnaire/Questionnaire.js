@@ -2,18 +2,78 @@ import "./Questionnaire.css";
 import Logo from './../../assets/images/logo.png';
 import Flecherouge from './../../assets/images/flecherouge.png';
 import Redline from './../../assets/images/redline.png';
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { setQuestionnaire } from "../../redux";
+import { useNavigate } from "react-router-dom";
+
+
 function Questionnaire(props){
-    const questionReponses={
+
+    /*
+    const questionnaire={
         id:1,question:"Où se situe votre problème ?",
             responses:["WC","Lavabo/évier","Douche/baignoire",
                 "colonne générale d'immeuble","Tuyauterie/canalisation",
                 "Tuyauterie/canalisation","Tuyau machine à laver/lave-vaisselle",
                 "chaudiere/chauffe-eau/ballon d'eau chaude"
             ]
-        }       
+        }
+    */    
+    console.log("Main Init......");
+    const [questionReponse,setQuestionReponse]=useState(null);
+    const [isMounted,setIsMounted]=useState(false);
+    var questionnaire=useSelector((state)=>state.questionnaire);
+    const curentDomaine=useSelector((state)=>state.curentDomaine);
+    const dispatch=useDispatch();
+    const navigate=useNavigate();
+    useEffect(()=>{
+        console.log("Use effect...... is Mount:",isMounted);
+        if(!isMounted){                                                
+            setQuestionReponse(questionnaire);
+            console.log("QuestionnaireReponse Now: ",questionReponse);
+            setIsMounted(true);
+        }
+    },[isMounted])        
+
+    console.log("QuestionnaireReponse After: ",questionReponse);
+    console.log("Questionnaire After: ",questionReponse);
+    function getNextQuestion(id){
+        var key="";        
+        if(id){
+            if(id[0]=="B"){
+                key=String.fromCharCode(id.charCodeAt(0)+1)+(parseInt(id.split(id[0])[1])-1).toString();
+            }else{
+                key=String.fromCharCode(id.charCodeAt(0)+1)+(parseInt(id.split(id[0])[1])).toString();        
+            }            
+        }
+        console.log("CurentD: ",curentDomaine);
+        console.log("result nex question :",key);           
+        try{
+            if(Object.keys(curentDomaine.questionnaire).indexOf(key[0])!=-1 && Object.keys(curentDomaine.questionnaire[key[0]]).indexOf(key)!=-1){
+                const newQestionnaire=curentDomaine.questionnaire[key[0]][key];
+                console.log("Qestionnaire curent :",questionnaire);
+                console.log("New curent :",newQestionnaire);
+                dispatch(setQuestionnaire(newQestionnaire));
+                setQuestionReponse(newQestionnaire);                
+            }else{
+                console.log("Pas de question:");
+                console.log("props:",props);
+                console.log("props keys:",Object.keys(props));
+                navigate("/information")
+
+            }
+            
+        }catch(err){
+            console.error("Error: ",err);
+        }             
+        return key;
+    }
 
     return (
+    
     <div className="questionnaire-main-container">
+
         <div className="questionnaire-nav-bar">
             <div className="questionnaire-logo-frame">
                 <img className="questionnaire-logo" src={Logo} alt="no icon"></img>
@@ -23,24 +83,24 @@ function Questionnaire(props){
             </div>
         </div>        
         <div className="questionnaire-main-frame">            
-                <div className="questionnaire-main-text">{questionReponses.question}</div>
+                <div className="questionnaire-main-text">{questionReponse ? questionReponse.question:null}</div>
                 <img className="questionnaire-line-frame" src={Redline} alt="no icon"/>
                 <div className="questionnaire-content-frame">            
                     <div className="questionnaire-grid-frame">
-                        {questionReponses.responses.map((reponse,index)=>(
-                            <div className="questionnaire-card" key={index}>
-                                <div className="questionnaire-card-text-frame"><label className="questionnaire-card-text">{reponse}</label></div>
+                        {questionReponse ? questionReponse.reponses.map((reponse,index)=>(
+                            <div className="questionnaire-card" key={index} onClick={()=>getNextQuestion(reponse.id)}>
+                                <div className="questionnaire-card-text-frame"><label className="questionnaire-card-text" >{reponse.value}</label></div>
                                 <div className="questionnaire-card-icon-frame">
                                     <img className="questionnaire-card-icon" src={Flecherouge} alt="not icon"/>
                                 </div>                            
                             </div>
-                        ))                    
+                        )):null
                         } 
                         <div className="questionnaire-back-button-frame">
                             <div className="questionnaire-back-button"><label className="questionnaire-back-button-text">Etape précédente</label></div>
                         </div>               
                     </div> 
-                </div>                                            
+                </div>                             
                 <div className="questionnaire-notification-frame">
                 <ul>
                     <li><span className="questionnaire-notification-text">Plus de <b>1500 professionnels qualifiés,</b> recrutés selon des critères et un processus stricts</span></li>

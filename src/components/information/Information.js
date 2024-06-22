@@ -1,5 +1,10 @@
 import "./Information.css";
+import OipImg from '../../assets/images/oip.png';
+import { useNavigate } from "react-router-dom";
+
 function Information(props){
+
+    const navigate=useNavigate();
            
     return (
     <div className="information-main-container">
@@ -15,7 +20,7 @@ function Information(props){
         </div>        
         <div className="information-main-frame">                            
                 <div className="information-content-frame">            
-                    <img  className="information-grid-frame" src="oip.png" alt="no icon"/> 
+                    <img  className="information-grid-frame" src={OipImg} alt="no icon"/> 
                     <div className="information-back-button-frame">
                         <div className="information-back-button"><span className="information-back-button-text">Bon à savoir</span></div>
                     </div>
@@ -54,7 +59,7 @@ function Information(props){
                             </ul>
 
                             <div className="information-intervention-button-frame">
-                                <div className="information-intervention-button"><span className="information-intervention-button-text">Demender une intervention</span></div>
+                                <div className="information-intervention-button" onClick={()=>navigate('/intervention')}><span className="information-intervention-button-text">Demender une intervention</span></div>
                             </div>
                         </div>
                         
