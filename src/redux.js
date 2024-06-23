@@ -51,17 +51,21 @@ const userResponsesSlice= createSlice({
     reducers: {
         addUserResponses: (state, action)=>{
             // { type: "questionnaire/addQuestionnaire", payload: "Mon proble concerne le WC"}
-            const data=action.payload
+            const data=action.payload;
             state.push(data);
         },
-        updateUserResponses: (state, action)=>{}
+        updateUserResponses: (state, action)=>{
+            const data=action.payload;
+            state=data;
+            return state;
+        }
     }    
 })
 
 
 export const { setDomainesData }= domainesSlice.actions;
 export const { setQuestionnaire }= questionnaireSlice.actions;
-export const { addUserResponses, updateUserResponeses }= userResponsesSlice.actions;
+export const { addUserResponses, updateUserResponses }= userResponsesSlice.actions;
 export const {setCurentDomaine}=curentDomaineSlice.actions;
 
 

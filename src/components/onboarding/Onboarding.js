@@ -8,17 +8,15 @@ import ChauffageImg from "./../../assets/images/Chauffage.png"
 import ElectromenagerImg from "./../../assets/images/Electromenager.png"
 import VitrerieImg from "./../../assets/images/Vitrerie.png"
 import { useDispatch, useSelector } from "react-redux";
-import { setCurentDomaine, setDomainesData, setQuestionnaire } from "../../redux";
+import { setCurentDomaine, setDomainesData, setQuestionnaire, updateUserResponses } from "../../redux";
 import{getAllDomaines} from "../../actions/onboardingActions"
 import { useNavigate } from "react-router-dom";
 
 
-
-
-
-function Onboarding(props){        
+function Onboarding(props){            
     const [isMounted,setIsMounted]=useState(false);    
     const dispatch = useDispatch();
+    dispatch(updateUserResponses([]));
     const domaines=useSelector((state)=> state.domaines);    
     const navigate=useNavigate();
     useEffect(()=>{

@@ -4,9 +4,8 @@ import Flecherouge from './../../assets/images/flecherouge.png';
 import Redline from './../../assets/images/redline.png';
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { addUserResponses, setQuestionnaire } from "../../redux";
+import { addUserResponses, setQuestionnaire, updateUserResponses } from "../../redux";
 import { useNavigate } from "react-router-dom";
-import { addListener } from "@reduxjs/toolkit";
 
 
 function Questionnaire(props){
@@ -26,6 +25,7 @@ function Questionnaire(props){
     const [isMounted,setIsMounted]=useState(false);
     var questionnaire=useSelector((state)=>state.questionnaire);
     const curentDomaine=useSelector((state)=>state.curentDomaine);
+    const userResponses=useSelector((state)=>state.userResponses);
     const dispatch=useDispatch();
     const navigate=useNavigate();
     useEffect(()=>{
@@ -38,15 +38,17 @@ function Questionnaire(props){
     },[isMounted])        
 
     console.log("QuestionnaireReponse After: ",questionReponse);
-    console.log("Questionnaire After: ",questionReponse);
+    console.log("User responses after After: ",userResponses);
     function getNextQuestion(id,reponse){
-        dispatch(addUserResponses({'domaine':questionReponse.domaine,
+        dispatch(addUserResponses(
+            {'domaine':questionReponse.domaine,
+            'idQ' : questionReponse.id,
             'question':questionReponse.question,
             'reponse':reponse
-        }))
+        }));
         var key="";        
         if(id){
-            if(id[0]=="B"){
+            if(id[0]==="B"){
                 key=String.fromCharCode(id.charCodeAt(0)+1)+(parseInt(id.split(id[0])[1])-1).toString();
             }else{
                 key=String.fromCharCode(id.charCodeAt(0)+1)+(parseInt(id.split(id[0])[1])).toString();        
@@ -55,7 +57,7 @@ function Questionnaire(props){
         console.log("CurentD: ",curentDomaine);
         console.log("result nex question :",key);           
         try{
-            if(Object.keys(curentDomaine.questionnaire).indexOf(key[0])!=-1 && Object.keys(curentDomaine.questionnaire[key[0]]).indexOf(key)!=-1){
+            if(Object.keys(curentDomaine.questionnaire).indexOf(key[0])!==-1 && Object.keys(curentDomaine.questionnaire[key[0]]).indexOf(key)!==-1){
                 const newQestionnaire=curentDomaine.questionnaire[key[0]][key];
                 console.log("Qestionnaire curent :",questionnaire);
                 console.log("New curent :",newQestionnaire);
@@ -68,6 +70,72 @@ function Questionnaire(props){
                 navigate("/information")
 
             }
+            
+        }catch(err){
+            console.error("Error: ",err);
+        }             
+        return key;
+    }
+
+    function getPrevQuestion(){        
+        var key="";
+        if(userResponses.length>0){
+            const lastResponse=userResponses[userResponses.length-1];
+            key=lastResponse.idQ;            
+        }else{
+            console.log("redirecte to boarding")
+                    //navigate("/")
+        }                
+        console.log("CurentD: ",curentDomaine);
+        console.log("result Prev question :",key);           
+        console.log("User reepones :",userResponses);           
+        try{
+            if(key[0]==="B"){
+                if(Object.keys(curentDomaine.questionnaire).indexOf(key[0])!==-1){
+                    const prevQestionnaire=curentDomaine.questionnaire[key[0]].filter((e)=>e.id===key)
+                    if(prevQestionnaire.length>0){
+                        //=curentDomaine.questionnaire[key[0]][key];
+                        console.log("Qestionnaire curent :",questionnaire);
+                        console.log("New prev questionnairecurent :",prevQestionnaire[0]);
+                        const newUpdateUserResponses=userResponses.splice(userResponses.length-1,1);                        
+                        dispatch(setQuestionnaire(prevQestionnaire[0]));
+                        dispatch(updateUserResponses(newUpdateUserResponses));
+                        setQuestionReponse(prevQestionnaire[0]);                
+
+                    }                
+                }else{
+                    console.log("Pas de question:");
+                    console.log("props:",props);
+                    console.log("props keys:",Object.keys(props));
+                    //navigate("/")
+    
+                }
+
+            }else{
+
+                try{
+                    if(Object.keys(curentDomaine.questionnaire).indexOf(key[0])!==-1 && Object.keys(curentDomaine.questionnaire[key[0]]).indexOf(key)!==-1){
+                        const newQestionnaire=curentDomaine.questionnaire[key[0]][key];
+                        console.log("Qestionnaire curent :",questionnaire);
+                        console.log("New curent :",newQestionnaire);
+                        //dispatch(setQuestionnaire(newQestionnaire));
+                        //setQuestionReponse(newQestionnaire);                
+                    }else{
+                        console.log("Pas de question:");
+                        console.log("props:",props);
+                        console.log("props keys:",Object.keys(props));
+                        //navigate("/information")
+        
+                    }
+                    
+                }catch(err){
+                    console.error("Error: ",err);
+                }             
+                return key;
+
+            }
+
+            
             
         }catch(err){
             console.error("Error: ",err);
@@ -101,7 +169,7 @@ function Questionnaire(props){
                             </div>
                         )):null
                         } 
-                        <div className="questionnaire-back-button-frame">
+                        <div className="questionnaire-back-button-frame" onClick={()=>getPrevQuestion()}>
                             <div className="questionnaire-back-button"><label className="questionnaire-back-button-text">Etape précédente</label></div>
                         </div>               
                     </div> 

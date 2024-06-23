@@ -2,9 +2,10 @@ import './Intervention.css';
 import Logo from './../../assets/images/logo.png';
 import Flechegauche from './../../assets/images/flechegauche.png';
 import Redline from './../../assets/images/redline.png';
-import { FormControl,TextField } from '@mui/material';
+import { FormControl,TextField, createTheme } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
+import { postFormAndResponses } from '../../actions/interventionActions';
 
 function Intervention(props){
 
@@ -19,15 +20,87 @@ function Intervention(props){
     const [checkPayOnline,setCheckPayOnline]=useState(false);
     const [checkPayInCash,setCheckPayInCash]=useState(false);
 
-    function handlerChange(event){
-        console.log("envent : ",event.target);
-        var value=event.target.value;        
-        if(event.target.name==="prenom")return setPrenom(value);
-        if(event.target.name==="nom")return setNom(value);        
-        if(event.target.name==="adresse") return setAdresse(value);
-        if(event.target.name==="codePostal") return setCodePostal(value);
-        if(event.target.name==="telephone") return setTelephone(value);
-        if(event.target.name==="email") return setEmail(value);
+    const [prenomColor,setPrenomColor]=useState(null);
+    const [nomColor,setNomColor]=useState("");
+    const [adresseColor,setAdresseColor]=useState("");
+    const [codePostalColor,setCodePostalColor]=useState("");
+    const [telephoneColor,setTelephoneColor]=useState("");
+    const [emailColor,setEmailColor]=useState("");
+
+    const [prenomError,setPrenomError]=useState(false);
+    const [nomError,setNomError]=useState(false);
+    const [adresseError,setAdresseError]=useState(false);
+    const [codePostalError,setCodePostalError]=useState(false);
+    const [telephoneError,setTelephoneError]=useState(false);
+    const [emailError,setEmailError]=useState(false);
+    
+    function handlerChange(event){        
+        var value=event.target.value; 
+        
+        if(event.target.name==="prenom"){            
+            setPrenom(value);       
+            console.log("Test: ",value.trim()!="")
+            if(value.trim()!=""){                
+                setPrenomColor("success");
+                setPrenomError(false);
+            }else{                
+                setPrenomColor(null);
+                setPrenomError(true);
+            }
+        }
+
+        if(event.target.name==="nom"){
+            setNom(value);
+            if(value.trim()!=""){                
+                setNomColor("success");
+                setNomError(false);
+            }else{                
+                setNomColor(null);
+                setNomError(true);
+            }
+          }  
+
+        if(event.target.name==="adresse"){
+            setAdresse(value);
+            if(value.trim()!=""){                
+                setAdresseColor("success");
+                setAdresseError(false);
+            }else{                
+                setAdresseColor(null);
+                setAdresseError(true);
+            }
+        } 
+        if(event.target.name==="codePostal"){
+            setCodePostal(value);
+            if(value.trim()!=""){                
+                setCodePostalColor("success");
+                setCodePostalError(false);
+            }else{                
+                setCodePostalColor(null);
+                setCodePostalError(true);
+            }
+        }
+
+        if(event.target.name==="telephone"){
+            setTelephone(value);
+            if(value.trim()!=""){                
+                setTelephoneColor("success");
+                setTelephoneError(false);
+            }else{                
+                setTelephoneColor(null);
+                setTelephoneError(true);
+            }
+        } 
+        if(event.target.name==="email"){
+            setEmail(value);
+            if(value.trim()!=""){                
+                setEmailColor("success");
+                setEmailError(false);
+            }else{                
+                setEmailColor(null);
+                setEmailError(true);
+            }
+        } 
     }
 
     function handlerCheckbox(event){
@@ -43,8 +116,22 @@ function Intervention(props){
         }
     }
 
-    function postForm(){
+    function postForm(event){
+        console.log("Event: ",event);
+        event.preventDefault();
+        const userData={
+            'prenom': prenom,
+            'nom':nom,
+            'telephone':telephone,
+            'adresse': adresse,
+            'codePostal': codePostal,
+            'email': email,
+            'reponses': userQuestionReponse
+        }        
         console.log("All User responses: ",userQuestionReponse);
+        console.log("All DATA User : ",userData);
+
+        postFormAndResponses(userData);
     }
            
     return (
@@ -62,17 +149,17 @@ function Intervention(props){
         <div className="main-frame">                            
                 <div className='content-frame'>            
                     
-                    <form>
+                    <form method='post' onSubmit={(event)=>postForm(event)}>
                         <FormControl>
                             <div className='customer-information-frame'>
                                 <div className='information-layout'><div className='info-icon-frame'><label className='point-text'>1</label></div><div className='information-text-layout'><label className='information-text'>Information</label></div></div>
-                                <div className='grid-frame'>                        
-                                    <TextField focused name="prenom" value={prenom} required label="Prénom" className='intputlayout' onChange={handlerChange}/>
-                                    <TextField focused name="nom" value={nom} label="Nom" required className='intputlayout' onChange={handlerChange}/>                                                            
-                                    <TextField focused name="adresse" value={adresse} label="Adresse (numéro et voie)" required className='intputlayout' onChange={handlerChange}/>                                                                    
-                                    <TextField focused name="codePostal" value={codePostal} label="Code postal" required className='intputlayout' onChange={handlerChange}/>                                                                    
-                                    <TextField focused name="telephone" value={telephone} label="Téléphone" required className='intputlayout' onChange={handlerChange}/>                                                                    
-                                    <TextField focused name="email" value={email} type='email'  label="Adresse email" required className='intputlayout' onChange={handlerChange}/>                                                                    
+                                <div className='grid-frame'>                                                            
+                                    <TextField name="prenom" error={prenomError}  value={prenom} color={prenomColor} required InputLabelProps={{shrink: true,}}  label="Prénom" className='intputlayout' onChange={handlerChange}/>                                                                                
+                                    <TextField name="nom" error={nomError} value={nom} color={nomColor} InputLabelProps={{shrink: true,}} sx={{"& label.Mui-focused" : {color: "black"},"& .MuiOutlinedInput-root" : {"&.Mui-focused fieldset" : {borderColor: "black"}}}} label="Nom" required className='intputlayout' onChange={handlerChange}/>                                                            
+                                    <TextField name="adresse" error={adresseError} value={adresse} color={adresseColor} InputLabelProps={{shrink: true,}} sx={{"& label.Mui-focused" : {color: "black"},"& .MuiOutlinedInput-root" : {"&.Mui-focused fieldset" : {borderColor: "black"}}}} label="Adresse (numéro et voie)" required className='intputlayout' onChange={handlerChange}/>                                                                    
+                                    <TextField name="codePostal" error={codePostalError} value={codePostal} color={codePostalColor} InputLabelProps={{shrink: true,}} sx={{"& label.Mui-focused" : {color: "black"},"& .MuiOutlinedInput-root" : {"&.Mui-focused fieldset" : {borderColor: "black"}}}} label="Code postal" required className='intputlayout' onChange={handlerChange}/>                                                                    
+                                    <TextField name="telephone" error={telephoneError} value={telephone} color={telephoneColor} InputLabelProps={{shrink: true,}} sx={{"& label.Mui-focused" : {color: "black"},"& .MuiOutlinedInput-root" : {"&.Mui-focused fieldset" : {borderColor: "black"}}}} label="Téléphone" required className='intputlayout' onChange={handlerChange}/>                                                                    
+                                    <TextField name="email" error={emailError} value={email} color={emailColor} type='email' InputLabelProps={{shrink: true,}} sx={{"& label.Mui-focused" : {color: "black"},"& .MuiOutlinedInput-root" : {"&.Mui-focused fieldset" : {borderColor: "black"}}}}  label="Adresse email" required className='intputlayout' onChange={handlerChange}/>                                                                    
                                 </div>
                             </div>
                         </FormControl>
@@ -129,7 +216,7 @@ function Intervention(props){
                                 </div>                        
                             </div>
                             <div className="pay-button-frame">                                
-                                <input onClick={()=>postForm()} value="Passer commande et payer en ligne" type="submit" className="pay-button"/>
+                                <input  value="Passer commande et payer en ligne" type="submit" className="pay-button"/>
                             </div>
                         </div>
                     </form>                    
