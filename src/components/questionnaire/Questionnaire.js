@@ -4,8 +4,9 @@ import Flecherouge from './../../assets/images/flecherouge.png';
 import Redline from './../../assets/images/redline.png';
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { setQuestionnaire } from "../../redux";
+import { addUserResponses, setQuestionnaire } from "../../redux";
 import { useNavigate } from "react-router-dom";
+import { addListener } from "@reduxjs/toolkit";
 
 
 function Questionnaire(props){
@@ -38,7 +39,11 @@ function Questionnaire(props){
 
     console.log("QuestionnaireReponse After: ",questionReponse);
     console.log("Questionnaire After: ",questionReponse);
-    function getNextQuestion(id){
+    function getNextQuestion(id,reponse){
+        dispatch(addUserResponses({'domaine':questionReponse.domaine,
+            'question':questionReponse.question,
+            'reponse':reponse
+        }))
         var key="";        
         if(id){
             if(id[0]=="B"){
@@ -88,7 +93,7 @@ function Questionnaire(props){
                 <div className="questionnaire-content-frame">            
                     <div className="questionnaire-grid-frame">
                         {questionReponse ? questionReponse.reponses.map((reponse,index)=>(
-                            <div className="questionnaire-card" key={index} onClick={()=>getNextQuestion(reponse.id)}>
+                            <div className="questionnaire-card" key={index} onClick={()=>getNextQuestion(reponse.id,reponse.value)}>
                                 <div className="questionnaire-card-text-frame"><label className="questionnaire-card-text" >{reponse.value}</label></div>
                                 <div className="questionnaire-card-icon-frame">
                                     <img className="questionnaire-card-icon" src={Flecherouge} alt="not icon"/>

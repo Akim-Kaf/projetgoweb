@@ -26,8 +26,8 @@ function Information(props){
                     </div>
                     <div className="information-notification-frame">
                         <span className="information-probleme-text">
-                            Vous faites face à des WC bouchés qui ne se vident plus correctement ? Vous vous interrogez sur les raisons de ce blocage et les solutions pour y remédier ? Faites appel à un plombier de MesDépanneurs.fr pour un débouchage efficace et rapide de vos toilettes !
-                            <p>
+                            Vous faites face à des WC bouchés qui ne se vident plus correctement ? Vous vous interrogez sur les raisons de ce blocage et les solutions pour y remédier ? Faites appel à un plombier de MesDépanneurs.fr pour un débouchage efficace et rapide de vos toilettes !                            
+                                
                                 Informations utiles pour le cas "Débouchage de WC"
                                 Le coût du débouchage de WC sans sanibroyeur dépend de l"ampleur de l"engorgement de vos toilettes et de la complexité à éliminer le bouchon. Le cas "Débouchage de WC" comprend les prestations suivantes : 
                                 <dl>
@@ -37,10 +37,7 @@ function Information(props){
                                     <dt>- Le nettoyage du chantier.</dt>
                                 </dl>
                                 Dans les cas les plus complexes, où le dégorgement dure plus de deux heures, le coût total pourrait excéder le devis initial (si l"usage d"un furet électrique sur différents niveaux est requis par exemple).
-                                Néanmoins, sachez que le plombier vous préviendra en amont de toute modification des frais si cette situation se produit. 
-                            </p>                            
-                            
-                            
+                                Néanmoins, sachez que le plombier vous préviendra en amont de toute modification des frais si cette situation se produit.                                                                                                                 
                         </span>
                     </div>
                 </div>

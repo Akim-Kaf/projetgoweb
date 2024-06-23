@@ -9,8 +9,7 @@
 }
 
 a{
-    text-decoration:none;
-    color: white;
+    text-decoration:none;    
 }
 
 .onboarding-center-grid{
@@ -114,12 +113,12 @@ a{
     height: 21px;
     gap: 0px;
     opacity: 0px;
-    width: 74px;
     font-family: "Poppins";
     font-size: 14px;
     font-weight: 700;
     line-height: 21px;
     text-align: center;
+    color: white;
     background: #FF445F;    
 }
 

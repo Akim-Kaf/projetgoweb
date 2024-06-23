@@ -10,8 +10,8 @@ import VitrerieImg from "./../../assets/images/Vitrerie.png"
 import { useDispatch, useSelector } from "react-redux";
 import { setCurentDomaine, setDomainesData, setQuestionnaire } from "../../redux";
 import{getAllDomaines} from "../../actions/onboardingActions"
-import Questionnaire from "../questionnaire/Questionnaire";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 
 
@@ -20,7 +20,7 @@ function Onboarding(props){
     const [isMounted,setIsMounted]=useState(false);    
     const dispatch = useDispatch();
     const domaines=useSelector((state)=> state.domaines);    
-    
+    const navigate=useNavigate();
     useEffect(()=>{
         if(!isMounted){                              
             setIsMounted(true);
@@ -50,7 +50,8 @@ function Onboarding(props){
         console.log("{} questionnaire: ",curentDomaine.questionnaire[premiereCol][0]);
         const questionnaire=curentDomaine.questionnaire[premiereCol][0];
         dispatch(setCurentDomaine(curentDomaine));
-        dispatch(setQuestionnaire(questionnaire));        
+        dispatch(setQuestionnaire(questionnaire));                
+        navigate("/questionnaire")
     }
     
 
@@ -63,13 +64,13 @@ function Onboarding(props){
                     <div className="onboarding-grid-frame">
                         {domaines?domaines.map((domaine,index=0)=>{                            
                             return (                                
-                            <Link key={index} to="/questionnaire" onClick={()=>{dispatchQuestionnaire(domaine.nom)}}><div key={index} className="onboarding-card" >
+                            <div key={index} onClick={()=>{dispatchQuestionnaire(domaine.nom)}}><div key={index} className="onboarding-card" >
                                 <div key={index+1} className="onboarding-card-icon-frame">
                                     <img key={index+2} className="onboarding-card-icon" src={getImage(domaine.nom)} alt="not im"/>
                                 </div>
                                 <label className="onboarding-card-text">{domaine.nom}</label>
                                 </div>
-                            </Link>
+                            </div>
                         )}):null                    
                         }
                                         

@@ -45,26 +45,23 @@ const questionnaireSlice= createSlice({
     }    
 })
 
-const userQuestionnaireSlice= createSlice({
-    name: "UserQuestionnaire",
+const userResponsesSlice= createSlice({
+    name: "userResponses",
     initialState: [],
     reducers: {
-        addUserQuestionnaire: (state, action)=>{
+        addUserResponses: (state, action)=>{
             // { type: "questionnaire/addQuestionnaire", payload: "Mon proble concerne le WC"}
-            const newQestionnaire = {
-                question: action.payload,
-                reponse: action.payload
-            }
-            state.push(newQestionnaire);
+            const data=action.payload
+            state.push(data);
         },
-        updateUserQuestionnaire: (state, action)=>{}
+        updateUserResponses: (state, action)=>{}
     }    
 })
 
 
 export const { setDomainesData }= domainesSlice.actions;
 export const { setQuestionnaire }= questionnaireSlice.actions;
-export const { addUserQuestionnaire, updateUserQuestionnaire }= userQuestionnaireSlice.actions;
+export const { addUserResponses, updateUserResponeses }= userResponsesSlice.actions;
 export const {setCurentDomaine}=curentDomaineSlice.actions;
 
 
@@ -72,7 +69,8 @@ export const store = configureStore({
     reducer: {
         domaines: domainesSlice.reducer,
         questionnaire: questionnaireSlice.reducer,
-        curentDomaine: curentDomaineSlice.reducer
+        curentDomaine: curentDomaineSlice.reducer,
+        userResponses: userResponsesSlice.reducer
     }
 })
 

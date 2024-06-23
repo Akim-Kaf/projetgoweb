@@ -2,9 +2,50 @@ import './Intervention.css';
 import Logo from './../../assets/images/logo.png';
 import Flechegauche from './../../assets/images/flechegauche.png';
 import Redline from './../../assets/images/redline.png';
-import { TextField } from '@mui/material';
+import { FormControl,TextField } from '@mui/material';
+import { useSelector } from 'react-redux';
+import { useState } from 'react';
 
 function Intervention(props){
+
+    const userQuestionReponse=useSelector((state)=>state.userResponses);
+    console.log("init User responses: ",userQuestionReponse);
+    const [prenom,setPrenom]=useState("");
+    const [nom,setNom]=useState("");
+    const [adresse,setAdresse]=useState("");
+    const [codePostal,setCodePostal]=useState("");
+    const [telephone,setTelephone]=useState("");
+    const [email,setEmail]=useState("");
+    const [checkPayOnline,setCheckPayOnline]=useState(false);
+    const [checkPayInCash,setCheckPayInCash]=useState(false);
+
+    function handlerChange(event){
+        console.log("envent : ",event.target);
+        var value=event.target.value;        
+        if(event.target.name==="prenom")return setPrenom(value);
+        if(event.target.name==="nom")return setNom(value);        
+        if(event.target.name==="adresse") return setAdresse(value);
+        if(event.target.name==="codePostal") return setCodePostal(value);
+        if(event.target.name==="telephone") return setTelephone(value);
+        if(event.target.name==="email") return setEmail(value);
+    }
+
+    function handlerCheckbox(event){
+        const value=event.target.value;        
+        if(event.target.name==="payOnLine"){
+            const choise=!checkPayOnline;
+            setCheckPayOnline(choise);
+            setCheckPayInCash(!choise);
+        }else{
+            const choise=!checkPayInCash;
+            setCheckPayInCash(choise)
+            setCheckPayOnline(!choise);            
+        }
+    }
+
+    function postForm(){
+        console.log("All User responses: ",userQuestionReponse);
+    }
            
     return (
     <div className="main-container">
@@ -22,20 +63,20 @@ function Intervention(props){
                 <div className='content-frame'>            
                     
                     <form>
-                        <div className='customer-information-frame'>
-                            <div className='information-layout'><div className='info-icon-frame'><label className='point-text'>1</label></div><div className='information-text-layout'><label className='information-text'>Information</label></div></div>
-                            <div className='grid-frame'>                        
-                                <TextField focused required label="Prénom" name="prenom"  className='intputlayout'/>
-                                <TextField focused label="Nom" name="nom" required className='intputlayout'/>                                                            
-                                <TextField focused label="Adresse (numéro et voie)" required className='intputlayout'/>                                                                    
-                                <TextField focused label="Code postal" required className='intputlayout'/>                                                                    
-                                <TextField focused label="Téléphone" required className='intputlayout'/>                                                                    
-                                <TextField focused type='email'  label="Adresse email" required className='intputlayout'/>                                    
-                                
-
+                        <FormControl>
+                            <div className='customer-information-frame'>
+                                <div className='information-layout'><div className='info-icon-frame'><label className='point-text'>1</label></div><div className='information-text-layout'><label className='information-text'>Information</label></div></div>
+                                <div className='grid-frame'>                        
+                                    <TextField focused name="prenom" value={prenom} required label="Prénom" className='intputlayout' onChange={handlerChange}/>
+                                    <TextField focused name="nom" value={nom} label="Nom" required className='intputlayout' onChange={handlerChange}/>                                                            
+                                    <TextField focused name="adresse" value={adresse} label="Adresse (numéro et voie)" required className='intputlayout' onChange={handlerChange}/>                                                                    
+                                    <TextField focused name="codePostal" value={codePostal} label="Code postal" required className='intputlayout' onChange={handlerChange}/>                                                                    
+                                    <TextField focused name="telephone" value={telephone} label="Téléphone" required className='intputlayout' onChange={handlerChange}/>                                                                    
+                                    <TextField focused name="email" value={email} type='email'  label="Adresse email" required className='intputlayout' onChange={handlerChange}/>                                                                    
+                                </div>
                             </div>
-                        </div>
-                        
+                        </FormControl>
+
                         <div className='pay-information-frame'>                        
                                 <div className='pay-layout'>
                                     <div className='info-icon-frame'>
@@ -50,14 +91,14 @@ function Intervention(props){
                                 <div className='card'>
                                     <div className='card-text-frame'><label className='card-text'>Payer sur place</label></div>
                                     <div className='card-icon-frame'>                                   
-                                        <input name="payersurplace" className='card-icon' type="checkbox"></input>
+                                        <input name="payCash" checked={checkPayInCash}  onChange={handlerCheckbox} className='card-icon' type="checkbox"></input>
                                     </div>                            
                                 </div>
 
                                 <div className='card'>
                                     <div className='card-text-frame'><label className='card-text'>Payer en ligne</label></div>
                                     <div className='card-icon-frame'>                                    
-                                        <input name="payerenligne" className='card-icon' type="checkbox"></input>
+                                        <input name="payerOnLigne" checked={checkPayOnline} onChange={handlerCheckbox} className='card-icon' type="checkbox"></input>
                                     </div>                            
                                 </div>                                 
                                                                                   
@@ -70,11 +111,11 @@ function Intervention(props){
                                     </div>
                                     <div className='condition-element'>
                                         <input id="checkbox-2" name="checkbox-2" className='card-icon' type="checkbox"></input>
-                                        <label className='label-checkbox' for="checkbox-2">J’ai bien pris connaissance des <a href="http://localhost:3000/" target="_blank" rel="noreferrer">dispositions relatives au droit de rétractation</a></label>
+                                        <label className='label-checkbox' >J’ai bien pris connaissance des <a href="http://localhost:3000/" target="_blank" rel="noreferrer">dispositions relatives au droit de rétractation</a></label>
                                     </div>                                
                                     <div className='condition-element'>
                                         <input id="checkbox-3" name="checkbox-3" className='card-icon' type="checkbox"></input>    
-                                        <label className='label-checkbox' for="checkbox-3">Je souhaite recevoir par voie électronique des offres commerciales personnalisées</label>
+                                        <label className='label-checkbox' >Je souhaite recevoir par voie électronique des offres commerciales personnalisées</label>
                                     </div>                                
                         </div>
                         
@@ -88,7 +129,7 @@ function Intervention(props){
                                 </div>                        
                             </div>
                             <div className="pay-button-frame">                                
-                                <div className="pay-button"><span className="pay-button-text">Passer commande et payer en ligne</span></div>
+                                <input onClick={()=>postForm()} value="Passer commande et payer en ligne" type="submit" className="pay-button"/>
                             </div>
                         </div>
                     </form>                    
