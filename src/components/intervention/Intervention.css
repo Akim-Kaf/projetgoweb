@@ -366,7 +366,7 @@ input{
     /*display: grid;*/
     width: 400px;
     height: 721px;
-    margin: auto;
+    margin-top: 30px;    
     justify-content: center;    
     border: 1px 0px 0px 0px;
     opacity: 0px;    
