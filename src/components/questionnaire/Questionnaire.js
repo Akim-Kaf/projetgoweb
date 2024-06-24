@@ -97,7 +97,7 @@ function Questionnaire(props){
                         //=curentDomaine.questionnaire[key[0]][key];
                         console.log("Qestionnaire curent :",questionnaire);
                         console.log("New prev questionnairecurent :",prevQestionnaire[0]);
-                        const newUpdateUserResponses=userResponses.splice(userResponses.length-1,1);                        
+                        const newUpdateUserResponses=userResponses.filter((e)=>e.idQ!==key);                                                
                         dispatch(setQuestionnaire(prevQestionnaire[0]));
                         dispatch(updateUserResponses(newUpdateUserResponses));
                         setQuestionReponse(prevQestionnaire[0]);                
