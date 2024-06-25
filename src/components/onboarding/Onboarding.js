@@ -11,6 +11,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { setCurentDomaine, setDomainesData, setQuestionnaire, updateUserResponses } from "../../redux";
 import{getAllDomaines} from "../../actions/onboardingActions"
 import { useNavigate } from "react-router-dom";
+import { DomaineCard } from "../cards/domainecard";
+import Logo from './../../assets/images/logo.png';
+import { Footer } from "../footer/footer";
 
 
 function Onboarding(props){            
@@ -42,7 +45,6 @@ function Onboarding(props){
     }
 
     function dispatchQuestionnaire(nom){        
-        //var domaineCopy=[... domaines];
         const curentDomaine=domaines.filter((e)=>e.nom.trim()===nom.trim())[0];        
         const premiereCol=Object.keys(curentDomaine.questionnaire)[0];        
         console.log("{} questionnaire: ",curentDomaine.questionnaire[premiereCol][0]);
@@ -52,9 +54,8 @@ function Onboarding(props){
         navigate("/questionnaire")
     }
     
-
     return (                
-            <div className="onboarding-main-container">
+            <div className="main-container" style={{"background-color":"#443D3C"}}>
                 
                 <div className="onboarding-main-frame">
                     <div className="onboarding-main-text">Mon problème concerne :</div>
@@ -62,22 +63,13 @@ function Onboarding(props){
                     <div className="onboarding-grid-frame">
                         {domaines?domaines.map((domaine,index=0)=>{                            
                             return (                                
-                            <div key={index} onClick={()=>{dispatchQuestionnaire(domaine.nom)}}><div key={index} className="onboarding-card" >
-                                <div key={index+1} className="onboarding-card-icon-frame">
-                                    <img key={index+2} className="onboarding-card-icon" src={getImage(domaine.nom)} alt="not im"/>
-                                </div>
-                                <label className="onboarding-card-text">{domaine.nom}</label>
-                                </div>
-                            </div>
+                            <DomaineCard key={index} nom={domaine.nom} icon={getImage(domaine.nom)} onClick={()=>dispatchQuestionnaire(domaine.nom)} />                                
                         )}):null                    
-                        }
-                                        
+                        }                                        
                     </div>            
                 </div>
                         
-                <div className="onboarding-bottom-frame">        
-                    <label className="onboarding-bottom-text">Goweb</label><label className="onboarding-bottom-red-text">.</label>
-                </div>    
+                <Footer logo={Logo}/>    
         </div>
             
     );

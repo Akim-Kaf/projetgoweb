@@ -1,10 +1,14 @@
-const { useState } = require("react");
-const { LongCheckBox } = require("../checkbox/longCheckBox");
-const { ConditionsList } = require("../lists/conditionsList");
+import { FormControl,TextField } from '@mui/material';
+import { useState } from 'react';
+import LongCheckBox from '../checkbox/longCheckBox';
+import ConditionsList from '../lists/conditionsList';
+import BackButton from '../buttons/backButton';
+import Flechegauche from './../../assets/images/flechegauche.png';
+import { postFormAndResponses } from '../../actions/interventionActions';
+import { useSelector } from 'react-redux';
 
-
-export function UserForm(props){
-
+export function UserForm(props){    
+    const userQuestionReponse=useSelector((state)=>state.userResponses);
     const [prenom,setPrenom]=useState("");
     const [nom,setNom]=useState("");
     const [adresse,setAdresse]=useState("");
@@ -105,7 +109,7 @@ export function UserForm(props){
         } 
         if(event.target.name==="email"){
             setEmail(value);
-            if( /\S+@\S\.\S+/.test(value.trim())){                
+            if( /\S+@\S.\S+/.test(value.trim())){                
                 setEmailColor("success");
                 setEmailError(false);
                 setEmailErrorMessage("");
@@ -141,6 +145,7 @@ export function UserForm(props){
             'email': email,
             'reponses': userQuestionReponse
         }        
+
         console.log("All User responses: ",userQuestionReponse);
         console.log("All DATA User : ",userData);
 
@@ -174,8 +179,8 @@ export function UserForm(props){
                                     </div>
                                 </div>
 
-                                <LongCheckBox name="payCash" text= "Payer sur place" checked={checkPayInCash} onChange={handlerCheckbox}/>
-                                <LongCheckBox name="payCash" text= "Payer en ligne" checked={checkPayOnline} onChange={handlerCheckbox}/>                                                                                                                                                                                       
+                                <LongCheckBox name="payCash" text="Payer sur place" checked={checkPayInCash} onChange={handlerCheckbox}/>
+                                <LongCheckBox name="payOnLine" text="Payer en ligne" checked={checkPayOnline} onChange={handlerCheckbox}/>                                                                                                                                                                                       
                         </div>
 
                         <div className='condition-frame'>                                
@@ -184,12 +189,12 @@ export function UserForm(props){
                         
                         <div className='form-back-pay-btn-frame'>
                             <div className="back-button-frame">                                
-                                <BackButton/>                        
+                                <BackButton icon={Flechegauche} text="Etape précédente"/>                        
                             </div>
                             <div className="pay-button-frame">                                
                                 <input  value="Passer commande et payer en ligne" type="submit" className="pay-button"/>
                             </div>
                         </div>
-                    </form>
+        </form>
     )
 }

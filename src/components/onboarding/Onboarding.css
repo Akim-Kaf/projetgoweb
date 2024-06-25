@@ -82,8 +82,7 @@ a{
 .onboarding-card:hover{
     background: #FF445F;         
     img{                                 
-        mix-blend-mode:difference;                  
-        /*filter: invert(0%);*/
+        filter: invert(1) sepia(1) saturate(5000%) hue-rotate(320deg) brightness(100);
     }
     
 }
@@ -97,6 +96,7 @@ a{
     opacity: 0px;
 
 }
+
 
 .onboarding-card-icon{    
     width: 80px;

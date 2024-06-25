@@ -6,11 +6,15 @@ import { FormControl,TextField } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { postFormAndResponses } from '../../actions/interventionActions';
+import { UserForm } from '../forms/UserForm';
+import { NavBar } from '../header/navbar';
+import { Footer } from '../footer/footer';
 
 function Intervention(props){
 
     const userQuestionReponse=useSelector((state)=>state.userResponses);
     console.log("init User responses: ",userQuestionReponse);
+    /*
     const [prenom,setPrenom]=useState("");
     const [nom,setNom]=useState("");
     const [adresse,setAdresse]=useState("");
@@ -152,93 +156,14 @@ function Intervention(props){
 
         postFormAndResponses(userData);
     }
-           
+        */   
     return (
-    <div className="main-container">
-        <div className="nav-bar">
-            <div className='logo-frame'>
-                <div className="logo-layout">
-                    <img className='logo' src={Logo} alt='no icon'></img>
-                </div>                
-            </div>
-            <div className='contact-frame'>
-                <label className='contact-text'>Contact</label><label className='red-text'>.</label>
-            </div>
-        </div>        
+    <div className="main-container">             
+        <NavBar Logo={Logo} text="Contact"/>   
         <div className="main-frame">                            
                 <div className='content-frame'>            
                     
-                    <form method='post' onSubmit={(event)=>postForm(event)}>
-                        <FormControl>
-                            <div className='customer-information-frame'>
-                                <div className='information-layout'><div className='info-icon-frame'><label className='point-text'>1</label></div><div className='information-text-layout'><label className='information-text'>Information</label></div></div>
-                                <div className='grid-frame'>                                                            
-                                    <TextField  helperText={prenomErrorMessage} autoComplete='off' name="prenom" error={prenomError}  value={prenom} color={prenomColor} required InputLabelProps={{shrink: true,}}  label="Prénom" className='intputlayout' onChange={handlerChange}/>                                                                                
-                                    <TextField  helperText={nomErrorMessage} autoComplete='off' name="nom" error={nomError} value={nom} color={nomColor} InputLabelProps={{shrink: true,}}  label="Nom" required className='intputlayout' onChange={handlerChange}/>                                                            
-                                    <TextField helperText={adresseErrorMessage} autoComplete='off' name="adresse" error={adresseError} value={adresse} color={adresseColor} InputLabelProps={{shrink: true,}}  label="Adresse (numéro et voie)" required className='intputlayout' onChange={handlerChange} />                                                                                                        
-                                    <TextField helperText={codePostalErrorMessage} autoComplete='off' name="codePostal" error={codePostalError} value={codePostal} color={codePostalColor} InputLabelProps={{shrink: true,}}  label="Code postal" required className='intputlayout' onChange={handlerChange} />                                                                    
-                                    <TextField helperText={telephoneErrorMessage} autoComplete='off' name="telephone" error={telephoneError} value={telephone} color={telephoneColor} InputLabelProps={{shrink: true,}}  label="Téléphone" required className='intputlayout' onChange={handlerChange}/>                                                                    
-                                    <TextField helperText={emailErrorMessage} autoComplete='off' name="email" error={emailError} value={email} color={emailColor} type='email' InputLabelProps={{shrink: true,}}  label="Adresse email" required className='intputlayout' onChange={handlerChange}/>                                                                    
-                                </div>
-                            </div>
-                        </FormControl>
-
-                        <div className='pay-information-frame'>                        
-                                <div className='pay-layout'>
-                                    <div className='info-icon-frame'>
-                                        <label className='point-text'>2</label>
-                                    </div>
-
-                                    <div className='pay-text-layout'>
-                                        <label className='information-text'>Modes de paiement</label>
-                                    </div>
-                                </div>
-
-                                <div className='card'>
-                                    <div className='card-text-frame'><label className='card-text'>Payer sur place</label></div>
-                                    <div className='card-icon-frame'>                                   
-                                        <input name="payCash" checked={checkPayInCash}  onChange={handlerCheckbox} className='card-icon' type="checkbox"></input>
-                                    </div>                            
-                                </div>
-
-                                <div className='card'>
-                                    <div className='card-text-frame'><label className='card-text'>Payer en ligne</label></div>
-                                    <div className='card-icon-frame'>                                    
-                                        <input name="payerOnLigne" checked={checkPayOnline} onChange={handlerCheckbox} className='card-icon' type="checkbox"></input>
-                                    </div>                            
-                                </div>                                 
-                                                                                  
-                        </div>
-
-                        <div className='condition-frame'>                                
-                                    <div className='condition-element'>
-                                        <input id="checkbox-1" name="checkbox-1" className='card-icon' type="checkbox"></input>
-                                        <label className='label-checkbox'>J’accepte les <a href="http://localhost:3000/" target="_blank" rel="noreferrer" >conditions générales d’utilisation du service</a></label>
-                                    </div>
-                                    <div className='condition-element'>
-                                        <input id="checkbox-2" name="checkbox-2" className='card-icon' type="checkbox"></input>
-                                        <label className='label-checkbox' >J’ai bien pris connaissance des <a href="http://localhost:3000/" target="_blank" rel="noreferrer">dispositions relatives au droit de rétractation</a></label>
-                                    </div>                                
-                                    <div className='condition-element'>
-                                        <input id="checkbox-3" name="checkbox-3" className='card-icon' type="checkbox"></input>    
-                                        <label className='label-checkbox' >Je souhaite recevoir par voie électronique des offres commerciales personnalisées</label>
-                                    </div>                                
-                        </div>
-                        
-                        <div className='form-back-pay-btn-frame'>
-                            <div className="back-button-frame">                                
-                                <div className="back-button">
-                                    <div className='card-icon-frame'>
-                                        <img className='card-icon' src={Flechegauche} alt="not icon"/>                                    
-                                    </div>
-                                    <span className="back-button-text">Etape précédente</span>
-                                </div>                        
-                            </div>
-                            <div className="pay-button-frame">                                
-                                <input  value="Passer commande et payer en ligne" type="submit" className="pay-button"/>
-                            </div>
-                        </div>
-                    </form>                    
+                    <UserForm/>                    
                     
                 </div>
                 <div className="rigth-content-frame">
@@ -279,13 +204,9 @@ function Intervention(props){
                 </div>                                                            
         </div>        
                     
-        <div className='bottom-frame'>
-            <div className='bottom-logo-frame'>
-                <div className="logo-layout">
-                        <img className='logo' src={Logo} alt='no icon'></img>
-                </div>
-            </div>                               
-        </div>    
+        
+        <Footer logo={Logo}/>
+                  
 
     </div>);
 }
