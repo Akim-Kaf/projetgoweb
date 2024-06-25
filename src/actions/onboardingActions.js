@@ -1,12 +1,10 @@
 import axios from "../config";
 
-
-
-
-
 // Recuperer les domaines
 export const getAllDomaines = () => {  
-    return axios
+
+    try{
+      return axios
           .get("domaines")
           .then((response,error) => { 
             if(error){
@@ -15,4 +13,8 @@ export const getAllDomaines = () => {
             }                               
             return response.data;
           });
+    }catch(error){      
+      console.log("ERROR: ",error);
+      return [];
+    }    
   };

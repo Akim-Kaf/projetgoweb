@@ -25,10 +25,15 @@ function Onboarding(props){
     useEffect(()=>{
         if(!isMounted){                              
             setIsMounted(true);
-            getAllDomaines().then((data)=>{
-                console.log("Get result: ",data);
-                dispatch(setDomainesData(data));
-            });
+            try{
+                getAllDomaines().then((data)=>{
+                    console.log("Get result: ",data);
+                    dispatch(setDomainesData(data));
+                });
+            }catch(err){
+                alert("Echec call Api");
+                console.log("EROOOO: ",err);
+            }            
         }                
     },[isMounted]);
 
@@ -55,7 +60,7 @@ function Onboarding(props){
     }
     
     return (                
-            <div className="main-container" style={{"background-color":"#443D3C"}}>
+            <div className="main-container" style={{"background":"#443D3C"}}>
                 
                 <div className="onboarding-main-frame">
                     <div className="onboarding-main-text">Mon problème concerne :</div>
