@@ -1,3 +1,4 @@
+//import "./UserForm.css"
 import { FormControl,TextField } from '@mui/material';
 import { useState } from 'react';
 import LongCheckBox from '../checkbox/longCheckBox';
@@ -187,10 +188,8 @@ export function UserForm(props){
                             <ConditionsList/>                               
                         </div>
                         
-                        <div className='form-back-pay-btn-frame'>
-                            <div className="back-button-frame">                                
-                                <BackButton icon={Flechegauche} text="Etape précédente"/>                        
-                            </div>
+                        <div className='form-back-pay-btn-frame'>                                                            
+                                <BackButton icon={Flechegauche} text="Etape précédente"/>                                                    
                             <div className="pay-button-frame">                                
                                 <input  value="Passer commande et payer en ligne" type="submit" className="pay-button"/>
                             </div>

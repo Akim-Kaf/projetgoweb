@@ -145,6 +145,10 @@
     background: #F2F2F2;
 }
 
+.questionnaire-card:hover{
+    background: #FFF0F1;
+}
+
 
 .questionnaire-card-text-frame{    
     justify-content: center;

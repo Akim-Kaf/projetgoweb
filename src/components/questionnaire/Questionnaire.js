@@ -1,11 +1,13 @@
 import "./Questionnaire.css";
 import Logo from './../../assets/images/logo.png';
 import Flecherouge from './../../assets/images/flecherouge.png';
+import Flechegauche from './../../assets/images/flechegauche.png';
 import Redline from './../../assets/images/redline.png';
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { addUserResponses, setQuestionnaire, updateUserResponses } from "../../redux";
 import { useNavigate } from "react-router-dom";
+import BackButton from "../buttons/backButton";
 
 
 function Questionnaire(props){
@@ -169,10 +171,9 @@ function Questionnaire(props){
                             </div>
                         )):null
                         } 
-                        <div className="questionnaire-back-button-frame" onClick={()=>getPrevQuestion()}>
-                            <div className="questionnaire-back-button"><label className="questionnaire-back-button-text">Etape précédente</label></div>
-                        </div>               
-                    </div> 
+                                      
+                    </div>                
+                    <BackButton icon={Flechegauche} text="Etape précédente" onClick={()=>getPrevQuestion()}/>                            
                 </div>                             
                 <div className="questionnaire-notification-frame">
                 <ul>

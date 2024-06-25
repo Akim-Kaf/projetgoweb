@@ -336,6 +336,62 @@ input{
     margin: auto;
 }
 
+.custom-checkbox{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+    position: relative;
+}
+
+.custom-checkbox input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-checkbox .checkmark{
+    display: inline-block;
+    width: 24px;
+    height: 24px;    
+    border-radius: 4px;  
+    background-color: white;
+    margin-right: 10px;
+    position: relative;  
+} 
+
+.custom-checkbox input:checked + .checkmark{
+    background: url("../../assets/images/redcheck.png");
+    /*background-color:green;*/
+}
+
+.custom-checkbox .checkmark:after{
+    content:"";
+    position:absolute;
+    display: none;
+}
+
+.custom-checkbox input:checked + .checkmark:after{
+    display: block;
+}
+
+/*
+.custom-checkbox .checkmark:after{
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+*/
+
+
+
+
+
+
 .condition-frame{    
     display: grid;
     width: 572px;
@@ -689,4 +745,3 @@ legend{
 .red-text{
     color: #FF445F;
 }
-
