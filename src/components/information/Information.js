@@ -1,6 +1,10 @@
 import "./Information.css";
 import OipImg from '../../assets/images/oip.png';
+import Logo from './../../assets/images/logo.png';
+import Euro from './../../assets/images/cercle-euro.png';
 import { useNavigate } from "react-router-dom";
+import { Footer } from "../footer/footer";
+import { NavBar } from "../header/navbar";
 
 function Information(props){
 
@@ -8,16 +12,7 @@ function Information(props){
            
     return (
     <div className="information-main-container">
-        <div className="information-nav-bar">
-            <div className="information-logo-frame">
-                <div className="information-logo-layout">
-                    <img className="information-logo" src="logo.png" alt="no icon"></img>
-                </div>                
-            </div>
-            <div className="information-contact-frame">
-                <label className="information-contact-text">Contact</label><label className="information-red-text">.</label>
-            </div>
-        </div>        
+        <NavBar Logo={Logo} text="Contact"/>        
         <div className="information-main-frame">                            
                 <div className="information-content-frame">            
                     <img  className="information-grid-frame" src={OipImg} alt="no icon"/> 
@@ -45,8 +40,8 @@ function Information(props){
                     <div className="information-rigth-item-frame">
                         <div className="information-main-text">Réparation d’une fuite de la vanne principale ou avant la vanne</div>
                         <div className="information-rigth-content-item-frame">
-                            <ul>
-                                <li id="euro"><span className="information-notification-text">Entre 150€ et 300€ TTC</span></li>
+                            <ul className="custom-unique-list">
+                                <li id="custom" style={{"--image-url":`url(${Euro})`}}><span className="information-notification-text">Entre 150€ et 300€ TTC</span></li>
                                 <li><span className="information-notification-text">Gros matériel</span></li>
                                 <li><span className="information-notification-text">Déplacement</span></li>                                
                                 <li><span className="information-notification-text">Petites fournitures</span></li>
@@ -73,13 +68,7 @@ function Information(props){
                 </div>                                                            
         </div>        
                     
-        <div className="information-bottom-frame">
-            <div className="information-bottom-logo-frame">
-                <div className="information-logo-layout">
-                        <img className="information-logo" src="logo.png" alt="no icon"></img>
-                </div>
-            </div>                               
-        </div>    
+        <Footer logo={Logo}/> 
 
     </div>);
 }

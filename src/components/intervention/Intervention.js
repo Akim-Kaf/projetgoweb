@@ -1,6 +1,7 @@
 import './Intervention.css';
 import Logo from './../../assets/images/logo.png';
 import Flechegauche from './../../assets/images/flechegauche.png';
+import Euro from './../../assets/images/cercle-euro.png';
 import Redline from './../../assets/images/redline.png';
 import { FormControl,TextField } from '@mui/material';
 import { useSelector } from 'react-redux';
@@ -172,8 +173,8 @@ function Intervention(props){
                         <img className='line-frame' src={Redline} alt='no icon'/>
                         <div className="rigth-content-items-frame">
                             <div className="rigth-content-items-ul">
-                                <ul>
-                                    <li id="euro"><span className='notification-text'>Entre 150€ et 300€ TTC</span></li>
+                                <ul className="custom-unique-list">
+                                    <li id="custom" style={{"--image-url":`url(${Euro})`}}><span className='notification-text'>Entre 150€ et 300€ TTC</span></li>
                                     <li><span className='notification-text'>Gros matériel</span></li>
                                     <li><span className='notification-text'>Déplacement</span></li>                                
                                     <li><span className='notification-text'>Petites fournitures</span></li>

@@ -1,31 +1,4 @@
-body {
-    font-size: 100%;    
-}
-h1 {font-size: 3em;}
-@media screen and (max-width: 64em) {
-    body {
-        font-size: 90%;
-    }
-    h1 {
-            font-size: 2.5em;
-        }
-}
-@media screen and (max-width: 50em) {
-    body {
-        font-size: 75%;
-    }
-    h1 {
-        font-size: 2em;
-    }
-}
-@media screen and (max-width: 30em){
-    body {
-        font-size: 50%;
-    }
-    h1 {
-            font-size: 1.5em;
-        }
-    }
+
 
 /*
 p{
@@ -48,80 +21,6 @@ p{
     opacity: 0px;    
 
 }
-
-.information-nav-bar{
-    display: flex;
-    width: 100%;
-    height: 61px;
-    gap: 0px;
-    justify-content: space-between;
-    opacity: 0px;
-    background: #FFFFFF;
-}
-
-.information-logo-frame{
-    width: 9.151%;
-    /*height: 100%;    */
-    /*gap: 8px;*/
-    opacity: 0px;
-    background: #443D3C;      
-    display: flex;    
-}
-
-.information-bottom-logo-frame{
-    width: 9.151%;
-    height: 100%;    
-    /*gap: 8px;*/
-    opacity: 0px;      
-    display: flex;
-    margin: auto;    
-}
-
-.information-logo-layout{
-    width: 55.2%;
-    height: 24px;
-    margin: auto;
-    justify-content: center;
-    display: flex;
-    border: 1px solid white; /*to remove*/    
-}
-
-.information-logo{
-    width: 100%;
-    /*height: 100%;*/
-    gap: 0px;
-    opacity: 0px;
-    margin: auto;        
-}
-
-
-.information-contact-frame{
-    width: 9.151%;
-    height: 100%;
-    display: flex;    
-    justify-items: center;
-    gap: 0px;
-    opacity: 0px;
-    border-radius: 0px 10px 0px 0px;
-    background: #FF445F;
-}
-
-.information-contact-text{
-    /*width: 100%;*/
-    /*height: 100%;*/
-    gap: 0px;
-    opacity: 0px;    
-    font-family: 'Catamaran';
-    /*font-size: 100%;*/
-    font-weight: 800;
-    text-align: center;
-    margin: auto;
-    line-height: 29.52px;
-    color: #FFFFFF;
-    border: 1px solid black; /*to remove*/    
-
-}
-
 
 .information-main-frame{
     display: flex;
@@ -149,25 +48,11 @@ p{
     border: 1px solid black; /*to remove*/   
 }
 
-.information-line-frame{
-    width: 7.5%;
-    height: 36%;        
-    /*margin-top: -8%;*/
-    transform: translateY(-80%);
-    border: 1px solid black; /*to remove*/            
-    padding: 5px;
-}
-
 .information-content-frame{    
     width: 60%;
     height: 736px;
     margin: auto;
-    /*margin: auto;*/
-    /*transform: translateY(-10%);    */
-    /*margin-top: -105px;*/
-    padding: 10px;
-    /*margin-bottom: 200px;*/
-    /*gap: 10px;*/
+    padding: 10px;    
     border-radius: 10px 0px 0px 0px;
     border: 1px 0px 0px 0px;
     opacity: 0px;
@@ -191,15 +76,11 @@ p{
 }
 
 .information-rigth-content-frame{    
-    width: 30%;
+    width: 38%;
     height: 721px;
     margin: auto;
-    justify-content: center;
-    /*transform: translateY(-10%);    */
-    /*margin-top: -105px;*/
-    padding: 10px;
-    /*margin-bottom: 200px;*/
-    /*gap: 10px;*/    
+    justify-content: center;    
+    padding: 10px;    
     border: 1px 0px 0px 0px;
     opacity: 0px;    
     border: 1px solid green;    
@@ -221,13 +102,7 @@ p{
 .information-rigth-content-item-frame{    
     width: 100%;
     height: 212px;
-    position: fixed;
-    /*margin: auto;*/
-    /*transform: translateY(-10%);    */
-    /*margin-top: -105px;*/
-    /*padding: 10px;*/
-    /*margin-bottom: 200px;*/
-    /*gap: 10px;*/    
+    position: fixed;        
     bottom: 0;
     border: 1px 0px 0px 0px;
     opacity: 0px;    
@@ -238,12 +113,7 @@ p{
     width: 95%;
     height: 155px;
     margin: auto;
-    margin-top: 10%;
-    /*transform: translateY(-10%);    */
-    /*margin-top: -105px;*/
-    /*padding: 10px;*/
-    /*margin-bottom: 200px;*/
-    /*gap: 10px;*/    
+    margin-top: 10%;      
     border: 1px 0px 0px 0px;
     opacity: 0px;    
     border: 1px solid darkblue;    
@@ -283,9 +153,7 @@ p{
 .information-back-button{
     width: 100%;
     height: 100%;
-    margin: auto;
-    /*padding: 16px;*/
-    /*gap: 8px;*/
+    margin: auto;    
     border-radius: 43px;
     border: 1px 0px 0px 0px;
     opacity: 0px;
@@ -317,16 +185,14 @@ p{
     transform: translateY(6%);
     gap: 0px;
     border-radius: 10px;    
-    opacity: 0px;
-    /*margin-top: 45px;*/
-    /*margin-bottom: 34px;    */
+    opacity: 0px;    
     justify-content: center;
     display: grid;
     border: 1px solid #FF445F;
 }
 
 
-
+/*
 ul{
     list-style-image:
     url("../../../src/assets/images/redok.png");
@@ -338,6 +204,7 @@ li#euro{
     list-style-image:
     url("../../../src/assets/images/cercle-euro.png");
 }
+*/
 
 .information-notification-text{
     font-family: '"Poppins", sans-serif';
@@ -363,9 +230,7 @@ li#euro{
 .information-intervention-button{
     width: 100%;
     height: 100%;
-    margin: auto;
-    /*padding: 16px;*/
-    /*gap: 8px;*/
+    margin: auto;    
     cursor: pointer;
     border-radius: 43px;
     border: 1px 0px 0px 0px;
@@ -400,7 +265,6 @@ li#euro{
     opacity: 0px;
     background: #000000;
     text-align: center;
-    /*padding: 71px 685px 71px 685px;*/ /*21px;*/ 
     border-radius: 0px 0px 10px 10px;       
 }
 
