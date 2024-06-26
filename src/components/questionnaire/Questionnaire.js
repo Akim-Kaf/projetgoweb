@@ -2,6 +2,7 @@ import "./Questionnaire.css";
 import Logo from './../../assets/images/logo.png';
 import Flecherouge from './../../assets/images/flecherouge.png';
 import Flechegauche from './../../assets/images/flechegauche.png';
+import Okvert from './../../assets/images/ok.png'
 import Redline from './../../assets/images/redline.png';
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
@@ -171,12 +172,11 @@ function Questionnaire(props){
                     
                 </div>                             
                 <div className="questionnaire-notification-frame">
-                <ul>
-                    <li><span className="questionnaire-notification-text">Plus de <b>1500 professionnels qualifiés,</b> recrutés selon des critères et un processus stricts</span></li>
-                    <li><span className="questionnaire-notification-text">Fourchette tarifaire <b>connue à l’avance,</b> incluant le déplacement ainsi qu’un devis gratuit</span></li>
-                    <li><span className="questionnaire-notification-text">Intervention <b>7j/7 24h/24</b> pour les dépannages d’urgence</span></li>
-                </ul>
-                
+                    <ul className="custom-unique-list" style={{margin:"auto","--image-url":`url(${Okvert})`}} >
+                        <li><span className="questionnaire-notification-text">Plus de <b>1500 professionnels qualifiés,</b> recrutés selon des critères et un processus stricts</span></li>
+                        <li><span className="questionnaire-notification-text">Fourchette tarifaire <b>connue à l’avance,</b> incluant le déplacement ainsi qu’un devis gratuit</span></li>
+                        <li><span className="questionnaire-notification-text">Intervention <b>7j/7 24h/24</b> pour les dépannages d’urgence</span></li>
+                    </ul>                
                 </div>
         </div>        
         <Footer logo={Logo}/>

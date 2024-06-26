@@ -618,19 +618,31 @@ input{
     border: 1px solid #FF445F;
 }
 
-
-
-ul{
-    list-style-image:
-    url("../../assets/images/redok.png");
-    border: 1px solid black;     
-    padding-left: 21px;    
+:root{
+    --image-url: url("../../assets/images/redok.png");
 }
 
+ul.custom-unique-list{
+    list-style-image: var(--image-url);
+}
+
+ul.custom-list{
+    list-style: none;
+    padding: 0;    
+}
+
+ul.custom-list{
+    list-style-image: var(--image-url);
+}
+
+/*
 li#euro{
     list-style-image:
     url("../../assets/images/cercle-euro.png");
 }
+*/
+
+
 
 .notification-text{
     font-family: 'Poppins',sans-serif;
