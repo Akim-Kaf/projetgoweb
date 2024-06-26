@@ -685,7 +685,7 @@ li#euro{
     /*height: 35px;*/
     height: 61px;
     /*top: 963px;*/
-    position:absolute;
+    position:fixed;
     bottom: 0;
     gap: 10px;
     opacity: 0px;

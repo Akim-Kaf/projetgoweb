@@ -60,7 +60,7 @@ function Onboarding(props){
     }
     
     return (                
-            <div className="main-container" style={{"background":"#443D3C"}}>
+            <div className="onboarding-main-container" >
                 
                 <div className="onboarding-main-frame">
                     <div className="onboarding-main-text">Mon problème concerne :</div>

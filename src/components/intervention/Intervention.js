@@ -202,12 +202,8 @@ function Intervention(props){
                         </p>
                     </div>
                 </div>                                                            
-        </div>        
-                    
-        
-        <Footer logo={Logo}/>
-                  
-
+        </div>                                    
+        <Footer logo={Logo}/>                  
     </div>);
 }
 

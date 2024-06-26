@@ -8,6 +8,8 @@ import { useEffect, useState } from "react";
 import { addUserResponses, setQuestionnaire, updateUserResponses } from "../../redux";
 import { useNavigate } from "react-router-dom";
 import BackButton from "../buttons/backButton";
+import { NavBar } from "../header/navbar";
+import { Footer } from "../footer/footer";
 
 
 function Questionnaire(props){
@@ -147,19 +149,12 @@ function Questionnaire(props){
 
     return (
     
-    <div className="questionnaire-main-container">
+    <div className="main-container">
 
-        <div className="questionnaire-nav-bar">
-            <div className="questionnaire-logo-frame">
-                <img className="questionnaire-logo" src={Logo} alt="no icon"></img>
-            </div>
-            <div className="questionnaire-contact-frame">
-                <label className="questionnaire-contact-text">Contact</label><label className="questionnaire-red-text">.</label>
-            </div>
-        </div>        
+        <NavBar Logo={Logo} text="Contact"/>         
         <div className="questionnaire-main-frame">            
                 <div className="questionnaire-main-text">{questionReponse ? questionReponse.question:null}</div>
-                <img className="questionnaire-line-frame" src={Redline} alt="no icon"/>
+                <img className="line-frame" src={Redline} alt="no icon"/>
                 <div className="questionnaire-content-frame">            
                     <div className="questionnaire-grid-frame">
                         {questionReponse ? questionReponse.reponses.map((reponse,index)=>(
@@ -171,9 +166,9 @@ function Questionnaire(props){
                             </div>
                         )):null
                         } 
-                                      
+                        <BackButton icon={Flechegauche} text="Etape précédente" onClick={()=>getPrevQuestion()}/>                                              
                     </div>                
-                    <BackButton icon={Flechegauche} text="Etape précédente" onClick={()=>getPrevQuestion()}/>                            
+                    
                 </div>                             
                 <div className="questionnaire-notification-frame">
                 <ul>
@@ -184,11 +179,7 @@ function Questionnaire(props){
                 
                 </div>
         </div>        
-                    
-        <div className="questionnaire-bottom-frame">        
-            <label className="questionnaire-bottom-text">Goweb</label><label className="questionnaire-bottom-red-text">.</label>
-        </div>    
-
+        <Footer logo={Logo}/>
     </div>);
 }
 
