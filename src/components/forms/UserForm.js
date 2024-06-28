@@ -1,5 +1,5 @@
 import "./UserForm.css"
-import { FormControl,TextField } from '@mui/material';
+import { TextField } from '@mui/material';
 import { useState } from 'react';
 import LongCheckBox from '../checkbox/longCheckBox';
 import ConditionsList from '../lists/conditionsList';
@@ -177,7 +177,7 @@ export function UserForm(props){
             <div className='customer-information-frame'>
                 <div className='information-layout'><div className='info-icon-frame'><label className='point-text'>1</label></div><div className='information-text-layout'><label className='information-text'>Information</label></div></div>
                 <div className='grid-frame'>                                                            
-                    <TextField  helperText={prenomErrorMessage} autoComplete='off' name="prenom" error={prenomError}  value={formData.prenom} color={prenomColor} required InputLabelProps={{shrink: true,}}  label="Prénom" className='intputlayout' onChange={handleChange}/>                                                                                
+                    <TextField  helperText={prenomErrorMessage} autoComplete='off' name="prenom" error={prenomError}  value={formData.prenom} color={prenomColor} required InputLabelProps={{shrink: true,}}  label="Prénom" className={`intputlayout ${prenomColor==="success" ? 'valid' : ''}`}   onChange={handleChange}/>                                                                                
                     <TextField  helperText={nomErrorMessage} autoComplete='off' name="nom" error={nomError} value={formData.nom} color={nomColor} InputLabelProps={{shrink: true,}}  label="Nom" required className='intputlayout' onChange={handleChange}/>                                                            
                     <TextField helperText={adresseErrorMessage} autoComplete='off' name="adresse" error={adresseError} value={formData.adresse} color={adresseColor} InputLabelProps={{shrink: true,}}  label="Adresse (numéro et voie)" required className='intputlayout' onChange={handleChange} />                                                                                                        
                     <TextField helperText={codePostalErrorMessage} autoComplete='off' name="codePostal" error={codePostalError} value={formData.codePostal} color={codePostalColor} InputLabelProps={{shrink: true,}}  label="Code postal" required className='intputlayout' onChange={handleChange} />                                                                    

@@ -1,0 +1,6 @@
+//export const URLSource = "http://127.0.0.1:8080";
+
+//pour la connexion avec le contenneur docker
+//export const URLSource = "http://node-app:8080";
+
+export const URLSource = "http://localhost:8080";
