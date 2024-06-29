@@ -1,5 +1,5 @@
 .customer-information-frame{    
-    width: 95%;
+    width: 87.5%;
     height: 335px;
     border: 1px solid green;    
     gap: 10px;
@@ -134,6 +134,51 @@
     width: 90%;
     text-align: left;
     border: 1px solid black;
+}
+
+/* Styles pour le conteneur de la checkbox*/
+.custom-checkbox{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+    position: relative;
+}
+
+/*Cache le checkbox reelle*/
+
+.custom-checkbox input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/*Style pour le span qui va remplacer le checkbox*/
+.custom-checkbox .checkmark{
+    display: inline-block;
+    width: 24px;
+    height: 24px;    
+    border-radius: 4px;  
+    background: white;
+    margin-right: 10px;
+    position: relative;  
+} 
+
+/*Ajout de l'image lors que la checkbox est cochee*/
+.custom-checkbox input:checked + .checkmark{
+    background: url("../../assets/images/redcheck.png");
+    /*background:green;*/
+}
+
+.custom-checkbox .checkmark:after{
+    content:"";
+    position:absolute;
+    display: none;
+}
+
+.custom-checkbox input:checked + .checkmark:after{
+    display: block;
 }
 
 

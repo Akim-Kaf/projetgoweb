@@ -1,17 +1,19 @@
 import "./UserForm.css"
 import { TextField } from '@mui/material';
 import { useState } from 'react';
-import LongCheckBox from '../checkbox/longCheckBox';
+import LongCheckBox from '../checkbox/LongCheckBox';
 import ConditionsList from '../lists/conditionsList';
 import BackButton from '../buttons/backButton';
 import Flechegauche from './../../assets/images/flechegauche.png';
 import { postFormAndResponses } from '../../actions/interventionActions';
 import { useSelector } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 
 export function UserForm(props){    
     const userQuestionReponse=useSelector((state)=>state.userResponses);
     const [checkPayOnline,setCheckPayOnline]=useState(false);
     const [checkPayInCash,setCheckPayInCash]=useState(false);
+    const navigate=useNavigate();
     
     const [formData, setFormData] = useState({
         prenom: "",
@@ -206,7 +208,7 @@ export function UserForm(props){
             </div>
             
             <div className='form-back-pay-btn-frame'>                                                            
-                    <BackButton icon={Flechegauche} text="Etape précédente"/>                                                    
+                    <BackButton icon={Flechegauche} text="Etape précédente" onClick={()=>navigate("/information")}/>                                                    
                 <div className="pay-button-frame">                                
                     <input  value="Passer commande et payer en ligne" type="submit" className="pay-button"/>
                 </div>

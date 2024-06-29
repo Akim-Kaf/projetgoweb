@@ -116,7 +116,6 @@ p{
 }
 
 .content-frame{
-    display: grid;
     justify-content: center;          
     align-items: center;
     width: 60%;
@@ -141,109 +140,6 @@ input{
     top:0;
 }*/
 
-.card{
-    display: flex;
-    margin-top: 10px;       
-    width: 95.5%;/*423px;*/
-    height: 47px;
-    gap: 0px;
-    border-radius: 10px;
-    justify-content: space-between;
-    opacity: 0px;
-    background: #F2F2F2;
-}
-
-
-.card-text-frame{    
-    justify-content: center;
-    display:flex;
-    width: 90%;  
-    height: 13px;  
-    gap: 0px;
-    opacity: 0px;    
-    margin: auto;
-    text-align: left;
-    border: 1px solid #000000;
-}
-
-.card-text{    
-    width: 100%;
-    height: 14px;
-    top: 12px;
-    gap: 0px;
-    opacity: 0px;        
-    font-family: 'Poppins',sans-serif;
-    font-size: 80%;
-    font-weight: 600;    
-    margin: auto;
-}
-
-
-.card-icon-frame{    
-    position: relative;
-    width: 24px;
-    height: 24px;
-    justify-content: center;
-    display: flex;
-    gap: 0px;
-    opacity: 0px;
-    margin: auto;    
-    border: 1px solid greenyellow;
-}
-
-.card-icon{      
-    position: relative;      
-    width: 20px;
-    height: 20px;
-    gap: 0px;
-    opacity: 0px;
-    margin: auto;
-}
-
-/* Styles pour le conteneur de la checkbox*/
-.custom-checkbox{
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
-    font-size: 16px;
-    user-select: none;
-    position: relative;
-}
-
-/*Cache le checkbox reelle*/
-
-.custom-checkbox input{
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
-
-/*Style pour le span qui va remplacer le checkbox*/
-.custom-checkbox .checkmark{
-    display: inline-block;
-    width: 24px;
-    height: 24px;    
-    border-radius: 4px;  
-    background: white;
-    margin-right: 10px;
-    position: relative;  
-} 
-
-/*Ajout de l'image lors que la checkbox est cochee*/
-.custom-checkbox input:checked + .checkmark{
-    background: url("../../assets/images/redcheck.png");
-    /*background:green;*/
-}
-
-.custom-checkbox .checkmark:after{
-    content:"";
-    position:absolute;
-    display: none;
-}
-
-.custom-checkbox input:checked + .checkmark:after{
-    display: block;
-}
 
 /*
 .custom-checkbox .checkmark:after{

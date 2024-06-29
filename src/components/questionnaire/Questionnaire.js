@@ -34,16 +34,21 @@ function Questionnaire(props){
     const dispatch=useDispatch();
     const navigate=useNavigate();
     useEffect(()=>{
-        console.log("Use effect...... is Mount:",isMounted);
-        if(!isMounted){                                                
+        console.log("***Use effect Questionnaire ...... is Mount:",isMounted);
+        //if(!isMounted){                                                
             setQuestionReponse(questionnaire);
             console.log("QuestionnaireReponse Now: ",questionReponse);
-            setIsMounted(true);
-        }
-    },[isMounted])        
+            //setIsMounted(true);
+        //}
+    },[questionnaire])       
+    
+    if(questionnaire.domaine.length===0){
+        console.log("PAS DE DATA (Page actualisee!!!!)");
+        navigate("/")
+    }
 
-    console.log("QuestionnaireReponse After: ",questionReponse);
-    console.log("User responses after After: ",userResponses);
+    console.log("Response User reepones on mounted :",userResponses);
+    
     function getNextQuestion(id,reponse){
         dispatch(addUserResponses(
             {'domaine':questionReponse.domaine,
@@ -51,6 +56,7 @@ function Questionnaire(props){
             'question':questionReponse.question,
             'reponse':reponse
         }));
+        console.log("On getNext Response User reepones :",userResponses);
         var key="";        
         if(id){
             if(id[0]==="B"){
@@ -58,21 +64,16 @@ function Questionnaire(props){
             }else{
                 key=String.fromCharCode(id.charCodeAt(0)+1)+(parseInt(id.split(id[0])[1])).toString();        
             }            
-        }
-        console.log("CurentD: ",curentDomaine);
+        }        
         console.log("result nex question :",key);           
         try{
             if(Object.keys(curentDomaine.questionnaire).indexOf(key[0])!==-1 && Object.keys(curentDomaine.questionnaire[key[0]]).indexOf(key)!==-1){
-                const newQestionnaire=curentDomaine.questionnaire[key[0]][key];
-                console.log("Qestionnaire curent :",questionnaire);
-                console.log("New curent :",newQestionnaire);
+                const newQestionnaire=curentDomaine.questionnaire[key[0]][key];                
                 dispatch(setQuestionnaire(newQestionnaire));
                 setQuestionReponse(newQestionnaire);                
             }else{
-                console.log("Pas de question:");
-                console.log("props:",props);
-                console.log("props keys:",Object.keys(props));
-                navigate("/information")
+                console.log("Pas de question:");                
+                navigate("/information");
 
             }
             
@@ -89,47 +90,42 @@ function Questionnaire(props){
             key=lastResponse.idQ;            
         }else{
             console.log("redirecte to boarding")
-                    //navigate("/")
-        }                
-        console.log("CurentD: ",curentDomaine);
+                    navigate("/")
+        }                        
         console.log("result Prev question :",key);           
         console.log("User reepones :",userResponses);           
         try{
             if(key[0]==="B"){
                 if(Object.keys(curentDomaine.questionnaire).indexOf(key[0])!==-1){
                     const prevQestionnaire=curentDomaine.questionnaire[key[0]].filter((e)=>e.id===key)
-                    if(prevQestionnaire.length>0){
-                        //=curentDomaine.questionnaire[key[0]][key];
-                        console.log("Qestionnaire curent :",questionnaire);
-                        console.log("New prev questionnairecurent :",prevQestionnaire[0]);
+                    if(prevQestionnaire.length>0){                        
                         const newUpdateUserResponses=userResponses.filter((e)=>e.idQ!==key);                                                
                         dispatch(setQuestionnaire(prevQestionnaire[0]));
+                        console.log("New User Responses :",newUpdateUserResponses);
                         dispatch(updateUserResponses(newUpdateUserResponses));
                         setQuestionReponse(prevQestionnaire[0]);                
 
                     }                
                 }else{
-                    console.log("Pas de question:");
-                    console.log("props:",props);
-                    console.log("props keys:",Object.keys(props));
-                    //navigate("/")
-    
+                    console.log("Pas de question Cas B:");                    
+                    navigate("/")    
                 }
 
             }else{
 
                 try{
                     if(Object.keys(curentDomaine.questionnaire).indexOf(key[0])!==-1 && Object.keys(curentDomaine.questionnaire[key[0]]).indexOf(key)!==-1){
-                        const newQestionnaire=curentDomaine.questionnaire[key[0]][key];
-                        console.log("Qestionnaire curent :",questionnaire);
-                        console.log("New curent :",newQestionnaire);
-                        //dispatch(setQuestionnaire(newQestionnaire));
+                        const newQestionnaire=curentDomaine.questionnaire[key[0]][key];                        
+                        const newUpdateUserResponses=userResponses.filter((e)=>e.idQ!==key);                                                
+                        dispatch(setQuestionnaire(newQestionnaire));
+                        console.log("New dif B User Responses :",newUpdateUserResponses);
+                        dispatch(updateUserResponses(newUpdateUserResponses));
                         //setQuestionReponse(newQestionnaire);                
                     }else{
                         console.log("Pas de question:");
                         console.log("props:",props);
                         console.log("props keys:",Object.keys(props));
-                        //navigate("/information")
+                        navigate("/")
         
                     }
                     
@@ -138,9 +134,7 @@ function Questionnaire(props){
                 }             
                 return key;
 
-            }
-
-            
+            }            
             
         }catch(err){
             console.error("Error: ",err);
