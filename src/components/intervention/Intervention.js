@@ -1,29 +1,18 @@
 import './Intervention.css';
 import Logo from './../../assets/images/logo.png';
-import Flechegauche from './../../assets/images/flechegauche.png';
 import Euro from './../../assets/images/cercle-euro.png';
 import Redline from './../../assets/images/redline.png';
-import { FormControl,TextField } from '@mui/material';
-import { useSelector } from 'react-redux';
-import { useState } from 'react';
-import { postFormAndResponses } from '../../actions/interventionActions';
 import { UserForm } from '../forms/UserForm';
 import { NavBar } from '../header/navbar';
 import { Footer } from '../footer/footer';
 
-function Intervention(props){
-
-    const userQuestionReponse=useSelector((state)=>state.userResponses);
-    console.log("init User responses: ",userQuestionReponse);    
-       
+function Intervention(props){    
     return (
     <div className="main-container">             
         <NavBar Logo={Logo} text="Contact"/>   
         <div className="main-frame">                            
-                <div className='content-frame'>            
-                    
-                    <UserForm/>                    
-                    
+                <div className='content-frame'>                                
+                    <UserForm/>                                        
                 </div>
                 <div className="rigth-content-frame">
                     <div className="rigth-item-frame">

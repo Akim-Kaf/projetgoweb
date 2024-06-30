@@ -32,8 +32,7 @@
     display: flex;
     gap: 0px;
     opacity: 0px;
-    margin: auto;    
-    border: 1px solid greenyellow;
+    margin: auto;        
 }
 
 .card-icon{      

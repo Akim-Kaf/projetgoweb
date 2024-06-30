@@ -1,6 +1,5 @@
 .condition-element{
-    height: 32px;
-    border: 1px solid yellowgreen;
+    height: 32px;    
     display: flex;        
 }
 
@@ -8,6 +7,5 @@
     font-size: 0.75em;
     margin: auto;
     width: 90%;
-    text-align: left;
-    border: 1px solid black;
+    text-align: left;    
 }

@@ -1,4 +1,3 @@
-
 a{
     text-decoration:none;    
 }
@@ -12,14 +11,8 @@ a{
     background: #443D3C;   
     opacity: 0px;        
 }
-.onboarding-center-grid{
-    text-align: center;
-    justify-content: center;
-    display:grid;
-}
 
-.onboarding-main-frame{
-    position:relative;   
+.onboarding-main-frame{    
     width: 74.03%; 
     height: 595.67px; /**/
     top: 141px; 
@@ -28,9 +21,7 @@ a{
     opacity: 0px;
     margin: auto;
     justify-items: center;
-    text-align: center;
-    display: grid;
-    border: 1px solid red; /*to remove*/
+    text-align: center;        
 }
 
 .onboarding-main-text{
@@ -40,8 +31,8 @@ a{
     font-weight: 700;
     font-size: 3em;
     line-height: 81px;
-    color: #FFFFFF;
-    border: 1px solid #FFFFFF; /*to remove*/
+    color: #FFFFFF;    
+    text-align: center;
 }
 
 .onboarding-line-frame{
@@ -53,111 +44,38 @@ a{
 }
 
 .onboarding-grid-frame{
-    display: grid;
+    display:grid;
+    justify-items: center;
     grid-template-columns: repeat(3,1fr);
     width: 55%;
     height: 380px;
     border-radius: 10px;
-    padding: 32px;
+    padding: 32px 0px 0px 0px;
     gap: 16px;    
     opacity: 0px;
-    border: 1px solid blue;
     margin: auto;
     justify-content: center;
 }
 
-.onboarding-card{
+.grid-container {
     display: grid;
-    justify-items: center;    
-    width: 150px;
-    height: 150px;
-    border-radius: 10px;    
-    padding: 15px 17px 15px 17px;
-    gap: 10px;    
-    opacity: 0px;
-    background: #FFF0F1;
-    box-shadow: 4px 7px 18px 7px #0000000D;
-}
-
-.onboarding-card:hover{
-    background: #FF445F;         
-    img{                                 
-        filter: invert(1) sepia(1) saturate(5000%) hue-rotate(320deg) brightness(100);
-    }
-    
-}
-
-
-.onboarding-card-icon-frame{    
-    width: 100px;
-    height: 100px;    
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Colonnes responsives */
+    gap: 10px; /* Espacement entre les éléments */
     padding: 10px;
-    gap: 10px;
-    opacity: 0px;
-
 }
 
-
-.onboarding-card-icon{    
-    width: 80px;
-    height: 80px;
-    gap: 0px;
-    border: 0.5px 0px 0px 0px;
-    opacity: 0px;
-}
-
-/*
-.onboarding-card-text-frame{
-    width: 80%;
-    height: 21px;
+.grid-item {
+    background-color: #FFC0CB; /* Couleur de fond pour la visualisation */
+    border: 1px solid #000; /* Bordure pour la visualisation */
+    aspect-ratio: 1 / 1; /* Assure un rapport largeur/hauteur de 1 */
+    display: flex;
+    align-items: center;
     justify-content: center;
-    padding: 0px 5px 0px 5px;
-    gap: 10px;
-    opacity: 0px;
-    background: #FF445F;    
-}*/
-
-
-.onboarding-card-text{
-    height: 21px;
-    gap: 0px;
-    opacity: 0px;
-    font-family: "Poppins";
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 21px;
-    text-align: center;
-    color: white;
-    background: #FF445F;    
+    font-size: 1.5rem; /* Taille de texte pour la visualisation */
 }
-
-.onboarding-bottom-frame{    
-    width: 100%;
-    height: 36px /*61*/;
-    top: 963px;
-    gap: 10px;
-    opacity: 0px;
-    background: #000000;
-    text-align: center;
-    /*padding: 71px 685px 71px 685px;*/ /*21px;*/ 
-    border-radius: 0px 0px 20px 20px;       
-}
-
-.onboarding-bottom-text{
-    font-family: 'Aller';
-    font-size: 20px;
-    font-style: italic;
-    font-weight: 700;
-    line-height: 24.14px;    
-    color: #FFFFFF;
-}
-
-.onboarding-bottom-red-text{
-    color: #FF445F;
-}
-
 
 /* Ajustements responsives */
+/*
 @media (max-width: 1367px) {
     .onboarding-grid-frame {
         width: 55%;
@@ -192,7 +110,7 @@ a{
         height: 340px;
         padding: 24px;
         gap: 12px;
-        grid-template-columns: repeat(2, 1fr); /* Changer à 2 colonnes */
+        grid-template-columns: repeat(2, 1fr); 
     }
     .onboarding-card {
         width: 75%;
@@ -207,7 +125,7 @@ a{
         height: 320px;
         padding: 20px;
         gap: 10px;
-        grid-template-columns: 1fr; /* Changer à 1 colonne */        
+        grid-template-columns: 1fr;     
     }
     .onboarding-card {
         width: 70%;
@@ -224,11 +142,14 @@ a{
         height: 300px;
         padding: 16px;
         gap: 8px;
-        grid-template-columns: 1fr; /* Reste à 1 colonne */
+        grid-template-columns: 1fr; 
     }
     .onboarding-card {
         width: 65%;
         height: 65%;
         padding: 7px 9px;
     }
-}
+}*/
+
+
+

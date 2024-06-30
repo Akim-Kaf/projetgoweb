@@ -96,8 +96,8 @@ export function UserForm(props){
             setAdresseErrorMessage(errorMessage);
         }
     } 
-    if(event.target.name==="codePostal"){            
-        if(value.trim()!==""){                
+    if(event.target.name==="codePostal" ){            
+        if(value.trim()!=="" && /\d{1,9}$/.test(value.trim())){                
             setCodePostalColor("success");
             if(!isValide)setIsValide(true);
             setCodePostalError(false);
@@ -150,10 +150,9 @@ export function UserForm(props){
         }
     }
 
-    function postForm(event){
-        console.log("Event: ",event);
+    function postForm(event){        
         event.preventDefault();
-        if(isValide){
+        if(isValide){            
             const userData={
                 'prenom': formData.prenom,
                 'nom':formData.nom,
@@ -163,10 +162,11 @@ export function UserForm(props){
                 'email': formData.email,
                 'reponses': userQuestionReponse
             }
-            try{
+            try{                
                 postFormAndResponses(userData);                
+                alert("C'est fait, Merci");
             }catch(error){
-                alert("ERROR !")
+                alert("ERROR !");
             }            
         }              
         
@@ -185,11 +185,11 @@ export function UserForm(props){
                 </div>
                 <div className='grid-frame'>                                                            
                     <TextField  helperText={prenomErrorMessage} autoComplete='off' name="prenom" error={prenomError}  value={formData.prenom} color={prenomColor} required InputLabelProps={{shrink: true,}}  label="Prénom" className={`intputlayout ${prenomColor==="success" ? 'valid' : ''}`}   onChange={handleChange}/>                                                                                
-                    <TextField  helperText={nomErrorMessage} autoComplete='off' name="nom" error={nomError} value={formData.nom} color={nomColor} InputLabelProps={{shrink: true,}}  label="Nom" required className='intputlayout' onChange={handleChange}/>                                                            
-                    <TextField helperText={adresseErrorMessage} autoComplete='off' name="adresse" error={adresseError} value={formData.adresse} color={adresseColor} InputLabelProps={{shrink: true,}}  label="Adresse (numéro et voie)" required className='intputlayout' onChange={handleChange} />                                                                                                        
-                    <TextField helperText={codePostalErrorMessage} autoComplete='off' name="codePostal" error={codePostalError} value={formData.codePostal} color={codePostalColor} InputLabelProps={{shrink: true,}}  label="Code postal" required className='intputlayout' onChange={handleChange} />                                                                    
-                    <TextField placeholder="0625567891" helperText={telephoneErrorMessage} autoComplete='off' name="telephone" error={telephoneError} value={formData.telephone} color={telephoneColor} InputLabelProps={{shrink: true,}}  label="Téléphone" required className='intputlayout' onChange={handleChange}/>                                                                    
-                    <TextField helperText={emailErrorMessage} autoComplete='off' name="email" error={emailError} value={formData.email} color={emailColor} type='email' InputLabelProps={{shrink: true,}}  label="Adresse email" required className='intputlayout' onChange={handleChange}/>                                                                    
+                    <TextField  helperText={nomErrorMessage} autoComplete='off' name="nom" error={nomError} value={formData.nom} color={nomColor} InputLabelProps={{shrink: true,}}  label="Nom" required className={`intputlayout ${nomColor==="success" ? 'valid' : ''}`} onChange={handleChange}/>                                                            
+                    <TextField helperText={adresseErrorMessage} autoComplete='off' name="adresse" error={adresseError} value={formData.adresse} color={adresseColor} InputLabelProps={{shrink: true,}}  label="Adresse (numéro et voie)" required className={`intputlayout ${adresseColor==="success" ? 'valid' : ''}`} onChange={handleChange} />                                                                                                        
+                    <TextField helperText={codePostalErrorMessage} autoComplete='off' name="codePostal" error={codePostalError} value={formData.codePostal} color={codePostalColor} InputLabelProps={{shrink: true,}}  label="Code postal" required className={`intputlayout ${codePostalColor==="success" ? 'valid' : ''}`} onChange={handleChange} />                                                                    
+                    <TextField placeholder="0625567891" helperText={telephoneErrorMessage} autoComplete='off' name="telephone" error={telephoneError} value={formData.telephone} color={telephoneColor} InputLabelProps={{shrink: true,}}  label="Téléphone" required className={`intputlayout ${telephoneColor==="success" ? 'valid' : ''}`} onChange={handleChange}/>                                                                    
+                    <TextField helperText={emailErrorMessage} autoComplete='off' name="email" error={emailError} value={formData.email} color={emailColor} type='email' InputLabelProps={{shrink: true,}}  label="Adresse email" required className={`intputlayout ${emailColor==="success" ? 'valid' : ''}`} onChange={handleChange}/>                                                                    
                 </div>
             </div>                        
 

@@ -18,8 +18,7 @@ import { Footer } from "../footer/footer";
 
 function Onboarding(props){            
     const [isMounted,setIsMounted]=useState(false);    
-    const dispatch = useDispatch();
-    dispatch(updateUserResponses([]));
+    const dispatch = useDispatch();    
     const domaines=useSelector((state)=> state.domaines);    
     const navigate=useNavigate();
     useEffect(()=>{
@@ -27,15 +26,15 @@ function Onboarding(props){
             setIsMounted(true);
             try{
                 getAllDomaines().then((data)=>{
-                    console.log("Get result: ",data);
                     dispatch(setDomainesData(data));
+                    dispatch(updateUserResponses([]));
                 });
             }catch(err){
                 alert("Echec call Api");
                 console.log("EROOOO: ",err);
             }            
         }                
-    },[isMounted]);
+    },[isMounted,dispatch]);
 
     function getImage(nom){
         if(nom==="Plomberie")return PlomberieImg;
@@ -51,8 +50,7 @@ function Onboarding(props){
 
     function dispatchQuestionnaire(nom){        
         const curentDomaine=domaines.filter((e)=>e.nom.trim()===nom.trim())[0];        
-        const premiereCol=Object.keys(curentDomaine.questionnaire)[0];        
-        console.log("{} questionnaire: ",curentDomaine.questionnaire[premiereCol][0]);
+        const premiereCol=Object.keys(curentDomaine.questionnaire)[0];                
         const questionnaire=curentDomaine.questionnaire[premiereCol][0];
         dispatch(setCurentDomaine(curentDomaine));
         dispatch(setQuestionnaire(questionnaire));                
