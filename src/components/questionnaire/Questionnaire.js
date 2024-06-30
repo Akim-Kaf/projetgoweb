@@ -51,7 +51,7 @@ function Questionnaire(props){
             if(Object.keys(curentDomaine.questionnaire).indexOf(key[0])!==-1 && Object.keys(curentDomaine.questionnaire[key[0]]).indexOf(key)!==-1){
                 const newQestionnaire=curentDomaine.questionnaire[key[0]][key];                
                 dispatch(setQuestionnaire(newQestionnaire));
-                setQuestionReponse(newQestionnaire);                
+                //setQuestionReponse(newQestionnaire);                
             }else{                             
                 navigate("/information");
 
@@ -69,8 +69,8 @@ function Questionnaire(props){
             const lastResponse=userResponses[userResponses.length-1];
             key=lastResponse.idQ;            
         }else{
-            console.log("redirecte to boarding")
-                    navigate("/")
+            console.log("redirecte to boarding");
+            navigate("/")
         }                        
         
         try{
@@ -79,11 +79,9 @@ function Questionnaire(props){
                     const prevQestionnaire=curentDomaine.questionnaire[key[0]].filter((e)=>e.id===key)
                     if(prevQestionnaire.length>0){                        
                         const newUpdateUserResponses=userResponses.filter((e)=>e.idQ!==key);                                                
-                        dispatch(setQuestionnaire(prevQestionnaire[0]));
-                        console.log("New User Responses :",newUpdateUserResponses);
+                        dispatch(setQuestionnaire(prevQestionnaire[0]));                        
                         dispatch(updateUserResponses(newUpdateUserResponses));
-                        setQuestionReponse(prevQestionnaire[0]);                
-
+                        //setQuestionReponse(prevQestionnaire[0]);                
                     }                
                 }else{
                     console.log("Pas de question Cas B:");                    
