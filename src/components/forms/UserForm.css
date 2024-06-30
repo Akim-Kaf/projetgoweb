@@ -93,7 +93,7 @@
 
 .form-back-pay-btn-frame{
     display: flex;
-    width: 522px;
+    width: 84%;
     height: 56px;
     gap:10px;
     justify-content: space-between;
@@ -114,26 +114,13 @@
 
 .condition-frame{    
     display: grid;
-    width: 572px;
+    align-items: center;
+    width: 92%;
     height: 136px;    
     padding: 10px 0px 0px 0px;
     gap: 10px;
     margin-top: 10px;    
     border: 1px solid blue;
-}
-
-.condition-element{
-    height: 32px;
-    border: 1px solid yellowgreen;
-    display: flex;        
-}
-
-.label-checkbox{
-    font-size: 0.75em;
-    margin: auto;
-    width: 90%;
-    text-align: left;
-    border: 1px solid black;
 }
 
 /* Styles pour le conteneur de la checkbox*/
@@ -146,7 +133,7 @@
     position: relative;
 }
 
-/*Cache le checkbox reelle*/
+/*Cache la checkbox reelle*/
 
 .custom-checkbox input{
     position: absolute;
@@ -181,17 +168,13 @@
     display: block;
 }
 
-
-
-
 .pay-button-frame{
     position: relative;        
     width: 58%;
     height: 56px;
     gap: 10px;
     opacity: 0px;    
-    border: 1px solid black;
-    margin: auto;    
+    border: 1px solid black;    
 }
 
 .pay-button{
@@ -199,7 +182,7 @@
     height: 100%;
     margin: auto;
     font-family: 'Poppins',sans-serif;
-    font-size: 14px;
+    font-size: 0.875em;
     font-weight: 600;
     border-radius: 43px;
     border: 1px 0px 0px 0px;
@@ -210,7 +193,7 @@
 
 
 .pay-information-frame{
-    width: 544px;
+    width: 87.5%;
     height: 158px;
     gap: 10px;
     border-radius: 10px 0px 0px 0px;

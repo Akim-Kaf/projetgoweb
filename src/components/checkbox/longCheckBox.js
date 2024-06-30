@@ -1,4 +1,4 @@
-import ("./LongCheckBox.css")
+import ("./longCheckBox.css")
 export default function LongCheckBox({name, text, checked, onChange}){
     
     return (

@@ -1,4 +1,4 @@
-
+import './conditionsList.css'
 export default function ConditionsList(){
 
     return (

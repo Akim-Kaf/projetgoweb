@@ -438,3 +438,43 @@ li#custom{
     text-align: left;
     color: #443D3C;
 }
+
+:root {
+    /* Définir les tailles de texte de base en rem */
+    font-size: calc(0.5vw + 8px); /* Cette formule ajuste la taille du texte en fonction de la largeur de la fenêtre */
+}
+
+h1 {
+    font-size: 1.125rem; /* 18px */
+}
+
+p {
+    font-size: 0.875rem; /* 14px */
+}
+
+li {
+    font-size: 0.75rem; /* 12px */
+}
+
+p.small-text {
+    font-size: 0.625rem; /* 10px */
+}
+
+/* Media queries pour ajuster les tailles de texte pour des tailles d'écran spécifiques */
+@media (max-width: 1200px) {
+    :root {
+        font-size: calc(0.5vw + 7px); /* Ajustement pour les écrans de taille moyenne */
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        font-size: calc(0.5vw + 6px); /* Ajustement pour les petits écrans */
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        font-size: calc(0.5vw + 5px); /* Ajustement pour les très petits écrans */
+    }
+}

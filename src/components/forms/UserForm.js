@@ -1,7 +1,7 @@
 import "./UserForm.css"
 import { TextField } from '@mui/material';
 import { useState } from 'react';
-import LongCheckBox from '../checkbox/LongCheckBox';
+import LongCheckBox from '../checkbox/longCheckBox';
 import ConditionsList from '../lists/conditionsList';
 import BackButton from '../buttons/backButton';
 import Flechegauche from './../../assets/images/flechegauche.png';
@@ -210,7 +210,7 @@ export function UserForm(props){
             <div className='form-back-pay-btn-frame'>                                                            
                     <BackButton icon={Flechegauche} text="Etape précédente" onClick={()=>navigate("/information")}/>                                                    
                 <div className="pay-button-frame">                                
-                    <input  value="Passer commande et payer en ligne" type="submit" className="pay-button"/>
+                    <input  value="Passer commande et payer en ligne" type="submit" className="pay-button"/>                    
                 </div>
             </div>
         </form>
