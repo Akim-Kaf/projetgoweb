@@ -46,7 +46,7 @@ export function UserForm(props){
     const [emailErrorMessage,setEmailErrorMessage]=useState("");
 
     const[isValide,setIsValide]=useState(false);
-
+  //Methode pour controler la saisi de l'utilisateur   
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({
@@ -164,9 +164,7 @@ export function UserForm(props){
                 'reponses': userQuestionReponse
             }
             try{
-                postFormAndResponses(userData);
-                console.log("All User responses: ",userQuestionReponse);
-                console.log("All DATA User : ",userData);        
+                postFormAndResponses(userData);                
             }catch(error){
                 alert("ERROR !")
             }            
@@ -177,7 +175,14 @@ export function UserForm(props){
     return(
         <form method='post' onSubmit={(event)=>postForm(event)}>                        
             <div className='customer-information-frame'>
-                <div className='information-layout'><div className='info-icon-frame'><label className='point-text'>1</label></div><div className='information-text-layout'><label className='information-text'>Information</label></div></div>
+                <div className='information-layout'>
+                    <div className='info-icon-frame'>
+                        <label className='point-text'>1</label>
+                    </div>
+                        <div className='pay-text-layout'>
+                            <label className='information-text'>Information</label>
+                        </div>
+                </div>
                 <div className='grid-frame'>                                                            
                     <TextField  helperText={prenomErrorMessage} autoComplete='off' name="prenom" error={prenomError}  value={formData.prenom} color={prenomColor} required InputLabelProps={{shrink: true,}}  label="Prénom" className={`intputlayout ${prenomColor==="success" ? 'valid' : ''}`}   onChange={handleChange}/>                                                                                
                     <TextField  helperText={nomErrorMessage} autoComplete='off' name="nom" error={nomError} value={formData.nom} color={nomColor} InputLabelProps={{shrink: true,}}  label="Nom" required className='intputlayout' onChange={handleChange}/>                                                            
@@ -208,7 +213,7 @@ export function UserForm(props){
             </div>
             
             <div className='form-back-pay-btn-frame'>                                                            
-                    <BackButton icon={Flechegauche} text="Etape précédente" onClick={()=>navigate("/information")}/>                                                    
+                <BackButton icon={Flechegauche} text="Etape précédente" onClick={()=>navigate("/information")}/>                                                                            
                 <div className="pay-button-frame">                                
                     <input  value="Passer commande et payer en ligne" type="submit" className="pay-button"/>                    
                 </div>

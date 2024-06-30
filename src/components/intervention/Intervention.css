@@ -292,7 +292,7 @@ input{
 .back-button-frame{
     /*position: relative;    */
     left: 1%;
-    width: 207px;
+    width: 40%;
     height: 56px;
     gap: 10px;
     opacity: 0px;    
@@ -314,19 +314,16 @@ input{
 }
 
 .back-button-text{
-    width: 127px;
+    /*width: 127px;*/
     height: 21px;
     gap: 0px;
     opacity: 0px;
     font-family: 'Poppins',sans-serif;
     font-size: 0.875em;
     font-weight: 600;
-    line-height: 1.3em;
     text-align: left;
     color: #FF445F;  
     margin: auto;
-    border: 1px solid #FF445F;
-
 }
 
 .notification-frame{
@@ -444,7 +441,7 @@ li#custom{
     font-size: calc(0.5vw + 8px); /* Cette formule ajuste la taille du texte en fonction de la largeur de la fenêtre */
 }
 
-h1 {
+h2 {
     font-size: 1.125rem; /* 18px */
 }
 
@@ -453,7 +450,7 @@ p {
 }
 
 li {
-    font-size: 0.75rem; /* 12px */
+    font-size: 0.875rem; /* 14px */
 }
 
 p.small-text {
@@ -473,8 +470,9 @@ p.small-text {
     }
 }
 
+
 @media (max-width: 480px) {
     :root {
-        font-size: calc(0.5vw + 5px); /* Ajustement pour les très petits écrans */
+        font-size: calc(0.5vw + 5px);
     }
 }
