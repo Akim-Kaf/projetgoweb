@@ -26,10 +26,11 @@ function Questionnaire(props){
     },[questionnaire])       
     
     if(questionnaire.domaine.length===0){
-        console.log("PAS DE DATA (Page actualisee!!!!)");
+        console.log("PAS DE DATA (Page actualisée!!!!)");
         navigate("/")
     }    
     
+    //trouve la clée de la prochaine question
     function getNextQuestion(id,reponse){
         dispatch(addUserResponses(
             {'domaine':questionReponse.domaine,
@@ -63,6 +64,7 @@ function Questionnaire(props){
         return key;
     }
 
+    //trouve la clé de la précédente question
     function getPrevQuestion(){        
         var key="";
         if(userResponses.length>0){

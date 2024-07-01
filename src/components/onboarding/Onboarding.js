@@ -48,6 +48,7 @@ function Onboarding(props){
         }
     }
 
+    //actualise les states pour le domaine encours et le questionnaire
     function dispatchQuestionnaire(nom){        
         const curentDomaine=domaines.filter((e)=>e.nom.trim()===nom.trim())[0];        
         const premiereCol=Object.keys(curentDomaine.questionnaire)[0];                

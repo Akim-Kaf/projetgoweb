@@ -15,6 +15,7 @@ export function UserForm(props){
     const [checkPayInCash,setCheckPayInCash]=useState(false);
     const navigate=useNavigate();
     
+    //structure de donnée pour récupérer les valeurs du formulaire
     const [formData, setFormData] = useState({
         prenom: "",
         nom: "",
@@ -24,7 +25,8 @@ export function UserForm(props){
         email: "",
         responses:[]
     });
-    
+
+    //les variables pour controler la saisie de l'utilisateur
     const [prenomColor,setPrenomColor]=useState(null);
     const [nomColor,setNomColor]=useState("");
     const [adresseColor,setAdresseColor]=useState("");
@@ -46,97 +48,98 @@ export function UserForm(props){
     const [emailErrorMessage,setEmailErrorMessage]=useState("");
 
     const[isValide,setIsValide]=useState(false);
-  //Methode pour controler la saisi de l'utilisateur   
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-        
-    if(event.target.name==="prenom"){                         
-        console.log("Test: ",value.trim()!=="")
-        if(value.trim()!==""){                            
-            setPrenomColor("success");
-            if(!isValide)setIsValide(true);
-            setPrenomError(false);
-            setPrenomErrorMessage("");
-        }else{                
-            if(isValide)setIsValide(false);
-            setPrenomColor(null);
-            setPrenomError(true);
-            setPrenomErrorMessage(errorMessage);
-        }
-    }
 
-    if(event.target.name==="nom"){            
-        if(value.trim()!==""){                
-            setNomColor("success");
-            if(!isValide)setIsValide(true);
-            setNomError(false);
-            setNomErrorMessage("");
-        }else{                
-            setNomColor(null);
-            if(isValide)setIsValide(false);
-            setNomError(true);
-            setNomErrorMessage(errorMessage);
+    //Méthode pour controler la saisi de l'utilisateur   
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormData({
+        ...formData,
+        [name]: value,
+        });
+            
+        if(event.target.name==="prenom"){                         
+            console.log("Test: ",value.trim()!=="")
+            if(value.trim()!==""){                            
+                setPrenomColor("success");
+                if(!isValide)setIsValide(true);
+                setPrenomError(false);
+                setPrenomErrorMessage("");
+            }else{                
+                if(isValide)setIsValide(false);
+                setPrenomColor(null);
+                setPrenomError(true);
+                setPrenomErrorMessage(errorMessage);
+            }
         }
-        }  
 
-    if(event.target.name==="adresse"){            
-        if(value.trim()!==""){                
-            setAdresseColor("success");
-            if(!isValide)setIsValide(true);
-            setAdresseError(false);
-            setAdresseErrorMessage("");
-        }else{                
-            setAdresseColor(null);        
-            if(isValide)setIsValide(false);        
-            setAdresseError(true);
-            setAdresseErrorMessage(errorMessage);
-        }
-    } 
-    if(event.target.name==="codePostal" ){            
-        if(value.trim()!=="" && /\d{1,9}$/.test(value.trim())){                
-            setCodePostalColor("success");
-            if(!isValide)setIsValide(true);
-            setCodePostalError(false);
-            setCodePostalErrorMessage("");
-        }else{                
-            setCodePostalColor(null);
-            if(isValide)setIsValide(false);
-            setCodePostalError(true);
-            setCodePostalErrorMessage(errorMessage);
-        }
-    }
+        if(event.target.name==="nom"){            
+            if(value.trim()!==""){                
+                setNomColor("success");
+                if(!isValide)setIsValide(true);
+                setNomError(false);
+                setNomErrorMessage("");
+            }else{                
+                setNomColor(null);
+                if(isValide)setIsValide(false);
+                setNomError(true);
+                setNomErrorMessage(errorMessage);
+            }
+            }  
 
-    if(event.target.name==="telephone"){            
-        if(value.trim()!=="" && /^0\d{9}$/.test(value.trim())){                
-            setTelephoneColor("success");
-            if(!isValide)setIsValide(true);
-            setTelephoneError(false);
-            setTelephoneErrorMessage("");
-        }else{                
-            setTelephoneColor(null);
-            if(isValide)setIsValide(true);
-            setTelephoneError(true);
-            setTelephoneErrorMessage(errorMessage);
+        if(event.target.name==="adresse"){            
+            if(value.trim()!==""){                
+                setAdresseColor("success");
+                if(!isValide)setIsValide(true);
+                setAdresseError(false);
+                setAdresseErrorMessage("");
+            }else{                
+                setAdresseColor(null);        
+                if(isValide)setIsValide(false);        
+                setAdresseError(true);
+                setAdresseErrorMessage(errorMessage);
+            }
+        } 
+        if(event.target.name==="codePostal" ){            
+            if(value.trim()!=="" && /\d{1,9}$/.test(value.trim())){                
+                setCodePostalColor("success");
+                if(!isValide)setIsValide(true);
+                setCodePostalError(false);
+                setCodePostalErrorMessage("");
+            }else{                
+                setCodePostalColor(null);
+                if(isValide)setIsValide(false);
+                setCodePostalError(true);
+                setCodePostalErrorMessage(errorMessage);
+            }
         }
-    } 
-    if(event.target.name==="email"){            
-        if( /\S+@\S+\.\S+/.test(value.trim())){                
-            setEmailColor("success");
-            if(!isValide)setIsValide(true);
-            setEmailError(false);
-            setEmailErrorMessage("");
-        }else{                
-            setEmailColor(null);
-            if(isValide)setIsValide(false);
-            setEmailError(true);
-            setEmailErrorMessage(errorMessage);
+
+        if(event.target.name==="telephone"){            
+            if(value.trim()!=="" && /^0\d{9}$/.test(value.trim())){                
+                setTelephoneColor("success");
+                if(!isValide)setIsValide(true);
+                setTelephoneError(false);
+                setTelephoneErrorMessage("");
+            }else{                
+                setTelephoneColor(null);
+                if(isValide)setIsValide(true);
+                setTelephoneError(true);
+                setTelephoneErrorMessage(errorMessage);
+            }
+        } 
+        if(event.target.name==="email"){            
+            if( /\S+@\S+\.\S+/.test(value.trim())){                
+                setEmailColor("success");
+                if(!isValide)setIsValide(true);
+                setEmailError(false);
+                setEmailErrorMessage("");
+            }else{                
+                setEmailColor(null);
+                if(isValide)setIsValide(false);
+                setEmailError(true);
+                setEmailErrorMessage(errorMessage);
+            }
         }
-    }
-  };
+    };
 
     function handlerCheckbox(event){        
         if(event.target.name==="payOnLine"){
@@ -150,6 +153,7 @@ export function UserForm(props){
         }
     }
 
+    //poste les réponses et les informations de l'utilisateur si le formulaire est valide
     function postForm(event){        
         event.preventDefault();
         if(isValide){            
