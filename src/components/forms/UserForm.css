@@ -181,6 +181,9 @@
     background: #FF445F;   
 }
 
+input[type="submit"]{
+    border: none;
+}
 
 .pay-information-frame{
     width: 87.5%;
